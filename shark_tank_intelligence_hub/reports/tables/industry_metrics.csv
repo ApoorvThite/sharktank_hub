@@ -1,0 +1,16 @@
+Industry,Success_Rate,Avg_Deal,Median_Revenue,Avg_Valuation
+Agriculture,85.71,38.0,273.5,4828.57
+Fitness/Sports/Outdoors,80.0,73.67,270.0,5528.57
+Medical/Health,75.0,85.4,110.0,5182.09
+Technology/Software,71.64,89.7,120.0,5973.8
+Food and Beverage,70.13,72.08,180.0,4973.09
+Children/Education,68.97,75.65,223.0,5514.95
+Beauty/Fashion,68.09,91.46,380.0,6550.4
+Liquor/Alcohol,66.67,90.0,671.5,8583.33
+Green/CleanTech,62.5,85.63,295.0,3381.05
+Electronics,60.0,133.33,9850.0,9685.8
+Others,60.0,30.65,165.0,2687.52
+Manufacturing,59.62,62.73,242.0,4592.82
+Lifestyle/Home,56.52,79.5,330.0,4536.15
+Animal/Pets,55.56,61.0,177.0,2511.59
+Vehicles/Electrical Vehicles,54.55,53.73,2.0,6231.08

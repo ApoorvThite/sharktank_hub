@@ -1,0 +1,5 @@
+Revenue_Category,Offers,Total,Success_Rate
+Pre-revenue,15,27,55.6
+Low (1-100L),43,75,57.3
+Medium (100-1000L),138,196,70.4
+High (>1000L),40,51,78.4

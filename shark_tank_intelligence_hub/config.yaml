@@ -1,0 +1,178 @@
+# Shark Tank India Intelligence Hub - Configuration File
+
+project:
+  name: "Shark Tank India Intelligence Hub"
+  version: "1.0.0"
+  description: "Complete Data Science & Business Analytics Platform"
+  author: "Data Science Team"
+
+data:
+  raw_data_path: "data/raw/shark_tank_india.csv"
+  processed_data_path: "data/processed/processed_data.csv"
+  industry_benchmarks_path: "data/industry_benchmarks/"
+  shark_profiles_path: "data/shark_profiles/"
+  
+  # Data specifications
+  total_pitches: 702
+  seasons: [1, 2, 3, 4, 5]
+  date_range:
+    start: "2021-12-20"
+    end: "2026-02-15"
+
+models:
+  shark_predictor:
+    model_type: "XGBoost"
+    model_path: "models/shark_predictor_xgb.pkl"
+    scaler_path: "models/feature_scaler.pkl"
+    test_size: 0.2
+    random_state: 42
+    
+  valuation_model:
+    model_type: "RandomForest"
+    model_path: "models/equity_predictor_rf.pkl"
+    n_estimators: 100
+    max_depth: 10
+    
+  hyperparameters:
+    xgboost:
+      n_estimators: 100
+      max_depth: 5
+      learning_rate: 0.1
+      subsample: 0.8
+      colsample_bytree: 0.8
+    
+    random_forest:
+      n_estimators: 100
+      max_depth: 10
+      min_samples_split: 5
+      min_samples_leaf: 2
+
+features:
+  shark_columns:
+    - "aman_gupta"
+    - "namita_thapar"
+    - "peyush_bansal"
+    - "vineeta_singh"
+    - "anupam_mittal"
+    - "ashneer_grover"
+    - "ghazal_alagh"
+  
+  numeric_features:
+    - "asked_amount"
+    - "asked_equity"
+    - "revenue"
+    - "profit"
+    - "years_in_business"
+    - "team_size"
+    - "season"
+    - "episode"
+  
+  categorical_features:
+    - "industry"
+    - "state"
+    - "city"
+    - "business_model"
+  
+  engineered_features:
+    - "asked_valuation"
+    - "implied_valuation"
+    - "valuation_gap"
+    - "revenue_multiple"
+    - "profit_margin"
+    - "num_sharks_involved"
+
+industries:
+  categories:
+    - "Food & Beverage"
+    - "Beauty & Fashion"
+    - "Technology"
+    - "Healthcare"
+    - "Education"
+    - "Fitness"
+    - "Home & Kitchen"
+    - "Agriculture"
+    - "Automotive"
+    - "Electronics"
+    - "Services"
+    - "Manufacturing"
+    - "Retail"
+    - "Entertainment"
+    - "Sports"
+    - "Travel & Tourism"
+    - "Sustainability"
+    - "Other"
+
+geographic:
+  regions:
+    West: ["Maharashtra", "Gujarat", "Goa"]
+    North: ["Delhi", "Uttar Pradesh", "Punjab", "Haryana", "Rajasthan", "Himachal Pradesh", "Uttarakhand", "Jammu & Kashmir"]
+    South: ["Karnataka", "Tamil Nadu", "Telangana", "Andhra Pradesh", "Kerala"]
+    East: ["West Bengal", "Odisha", "Bihar", "Jharkhand"]
+    Central: ["Madhya Pradesh", "Chhattisgarh"]
+    Northeast: ["Assam", "Meghalaya", "Manipur", "Tripura", "Nagaland", "Mizoram", "Arunachal Pradesh", "Sikkim"]
+
+analysis:
+  network:
+    layout_algorithm: "spring"
+    min_edge_weight: 1
+    
+  valuation:
+    acceptable_range_pct: 20
+    revenue_multiple_benchmarks:
+      low: 3.0
+      medium: 5.0
+      high: 8.0
+    
+  industry:
+    min_pitches_for_benchmark: 10
+    
+  geographic:
+    min_pitches_for_hub: 10
+    min_success_rate_for_hub: 65
+
+dashboard:
+  title: "Shark Tank India Intelligence Hub"
+  icon: "🦈"
+  layout: "wide"
+  theme: "light"
+  
+  pages:
+    - name: "Home"
+      icon: "🏠"
+    - name: "Shark Predictor"
+      icon: "🎯"
+    - name: "Valuation Check"
+      icon: "💰"
+    - name: "Shark Networks"
+      icon: "🤝"
+    - name: "Industry Intel"
+      icon: "🏭"
+    - name: "Deal Decoder"
+      icon: "📋"
+    - name: "Geo Insights"
+      icon: "🗺️"
+
+visualization:
+  color_schemes:
+    primary: "Viridis"
+    secondary: "Blues"
+    categorical: "Set2"
+  
+  figure_size:
+    default: [10, 6]
+    large: [12, 8]
+    network: [14, 10]
+
+reports:
+  output_path: "reports/"
+  figures_path: "reports/figures/"
+  
+  formats:
+    - "pdf"
+    - "html"
+    - "pptx"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/shark_tank_hub.log"

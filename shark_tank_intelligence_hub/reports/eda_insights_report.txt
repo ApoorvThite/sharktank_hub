@@ -1,0 +1,127 @@
+
+================================================================================
+SHARK TANK INDIA - COMPREHENSIVE EDA INSIGHTS REPORT
+================================================================================
+
+📊 DATASET OVERVIEW:
+   • Total Pitches: 702
+   • Seasons Covered: 1 - 5
+   • Numerical Variables: 61
+   • Categorical Variables: 19
+   • Date Range: Dec 2021 - Feb 2026
+
+💰 KEY FINANCIAL METRICS:
+   • Median Revenue: ₹240L
+   • Median Ask Amount: ₹75L
+   • Median Valuation: ₹3000L
+   • Average Deal Size: ₹79.4L
+   • Average Equity: 7.5%
+
+🎯 SUCCESS METRICS:
+   • Received Offer Rate: 66.2%
+   • Deal Acceptance Rate: 86.2%
+   • Total Deals Closed: 401 out of 702 pitches
+
+🏭 TOP 5 INDUSTRIES:
+   1. Food and Beverage: 154 pitches (21.9%)
+   2. Beauty/Fashion: 141 pitches (20.1%)
+   3. Technology/Software: 67 pitches (9.5%)
+   4. Medical/Health: 64 pitches (9.1%)
+   5. Manufacturing: 52 pitches (7.4%)
+
+🗺️ TOP 5 STATES:
+   1. Maharashtra: 163 pitches (23.2%)
+   2. Delhi: 94 pitches (13.4%)
+   3. Karnataka: 70 pitches (10.0%)
+   4. Gujarat: 57 pitches (8.1%)
+   5. Haryana: 46 pitches (6.6%)
+
+🦈 TOP SHARK INVESTORS:
+   1. Aman: ₹5854L invested, 143 deals
+   2. Namita: ₹4493L invested, 121 deals
+   3. Peyush: ₹4073L invested, 103 deals
+   4. Anupam: ₹3922L invested, 108 deals
+   5. Vineeta: ₹3044L invested, 91 deals
+
+📈 TRENDS ACROSS SEASONS:
+   • Deal sizes increased: ₹57.5L (S1) → ₹135.6L (S5) (+136%)
+   • Success rates stable: 61.8% - 71.6% range
+   • Valuations trending up: ₹4,152L (S1) → ₹7,075L (S5)
+
+💡 KEY INSIGHTS:
+
+1. REVENUE IMPACT (Strong Correlation)
+   • Pre-revenue startups: 55.6% success rate
+   • High revenue (>₹1000L): 78.4% success rate
+   • Insight: Revenue is a strong predictor of success
+
+2. INDUSTRY PATTERNS
+   • Highest success: Agriculture (85.7%), Fitness (80.0%), Medical/Health (75.0%)
+   • Lowest success: Travel (40.0%), Liquor (66.7%)
+   • Insight: Industry choice significantly impacts outcomes
+
+3. GEOGRAPHIC CONCENTRATION
+   • Top 3 states account for 46.6% of all pitches
+   • Gujarat shows highest success rate (73.7%) among top states
+   • Insight: Metro cities dominate but tier-2 cities emerging
+
+4. SHARK PREFERENCES
+   • Aman most active: 143 deals, 25% participation rate
+   • Ritesh highest participation: 36.3% when present
+   • Namita most selective: 23% participation, focused on health/beauty
+
+5. DEAL EVOLUTION
+   • Deal sizes growing 2.4x from S1 to S5
+   • Equity dilution decreasing: 15.58% (S1) → 6.52% (S5)
+   • Insight: Market maturing, founders getting better terms
+
+6. GENDER DYNAMICS
+   • Female-led startups: Strong performance
+   • Mixed teams: 31% of all pitches
+   • Insight: Gender diversity valued by sharks
+
+7. CASH BURN PARADOX
+   • Cash-burning startups: 68.9% offer rate
+   • Non-burning: 65.6% offer rate
+   • Insight: Growth potential valued over immediate profitability
+
+🔍 DATA QUALITY NOTES:
+   • Missing data: 31,445 values across 70 columns
+   • Structural missing: Shark-specific columns (expected)
+   • High missing (>50%): 46 columns (mostly deal-specific terms)
+   • Outliers identified: 155 across key metrics (retained as real scenarios)
+
+📊 STATISTICAL CHARACTERISTICS:
+   • Right-skewed distributions: Revenue, valuations, deal amounts
+   • Strong correlations: Revenue ↔ Deal success (0.52)
+   • Outlier examples: 3 startups >₹50,000L valuation, 2 >₹10,000L revenue
+
+🎯 ACTIONABLE RECOMMENDATIONS:
+
+For Founders:
+   1. Build revenue before pitching (78% vs 56% success)
+   2. Choose industry strategically (25% variance in success rates)
+   3. Target right sharks based on industry fit
+   4. Realistic valuations (median: ₹3,000L)
+
+For Investors:
+   1. Revenue is strongest success predictor
+   2. Industry matters: Tech/Health/Fitness outperform
+   3. Geographic diversification opportunity (tier-2 cities)
+   4. Deal structures evolving (more founder-friendly)
+
+For Researchers:
+   1. Indian startup ecosystem maturing rapidly
+   2. Increasing deal sizes indicate market confidence
+   3. Gender equity improving but room for growth
+   4. Regional patterns emerging beyond metros
+
+📁 ANALYSIS OUTPUTS:
+   • 14+ visualizations generated
+   • 8 comprehensive analysis sections completed
+   • 100+ statistical insights extracted
+   • Production-ready code and utilities created
+
+================================================================================
+END OF COMPREHENSIVE EDA REPORT
+================================================================================
