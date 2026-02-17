@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Insights - Shark Tank India Intelligence Hub</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .nav-bar {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .nav-bar a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .header {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        .header h1 { font-size: 2.5em; color: #333; margin-bottom: 10px; }
+        .header .emoji { font-size: 3em; margin-right: 15px; }
+        .comparison-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        .comparison-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .comparison-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+        }
+        .comparison-card.metro::before { background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); }
+        .comparison-card.non-metro::before { background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); }
+        .card-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .big-stat {
+            font-size: 3.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .mini-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .mini-stat {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .mini-stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .mini-stat-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+        }
+        .card h2 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .state-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .state-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+        .state-card:hover { transform: translateY(-3px); }
+        .state-rank {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .state-name {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .state-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .state-stat {
+            background: rgba(255,255,255,0.6);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .state-stat-value {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .state-stat-label {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 3px;
+        }
+        .region-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .region-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+        }
+        .region-name {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .region-stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .region-stat-row:last-child { border-bottom: none; }
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .insight-box {
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 12px;
+        }
+        .insight-box h4 {
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+        .insight-box p {
+            color: #555;
+            line-height: 1.6;
+        }
+        @media (max-width: 968px) {
+            .comparison-cards { grid-template-columns: 1fr; }
+            .state-grid { grid-template-columns: 1fr; }
+            .insights-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <a href="index.html">← Back to Home</a>
+            <span style="color: #333; font-weight: 600;">🗺️ Geo Insights</span>
+        </div>
+
+        <div class="header">
+            <h1><span class="emoji">🗺️</span>Geographic Insights</h1>
+            <p>24 states/UTs analyzed • Metro vs non-metro • Regional distribution • Industry specialization</p>
+        </div>
+
+        <div class="comparison-cards">
+            <div class="comparison-card metro">
+                <div class="card-title">🏙️ Metro States</div>
+                <div class="big-stat">65.8%</div>
+                <div class="stat-label">Success Rate</div>
+                <div class="mini-stats">
+                    <div class="mini-stat">
+                        <div class="mini-stat-value">398</div>
+                        <div class="mini-stat-label">Total Pitches</div>
+                    </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-value">56.7%</div>
+                        <div class="mini-stat-label">Market Share</div>
+                    </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-value">₹65.5L</div>
+                        <div class="mini-stat-label">Avg Deal</div>
+                    </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-value">262</div>
+                        <div class="mini-stat-label">Total Deals</div>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; padding: 12px; background: rgba(102, 126, 234, 0.1); border-radius: 8px; text-align: center; color: #667eea; font-weight: 600;">
+                    Slightly Lower Success
+                </div>
+            </div>
+
+            <div class="comparison-card non-metro">
+                <div class="card-title">🌾 Non-Metro States</div>
+                <div class="big-stat">66.8%</div>
+                <div class="stat-label">Success Rate</div>
+                <div class="mini-stats">
+                    <div class="mini-stat">
+                        <div class="mini-stat-value">304</div>
+                        <div class="mini-stat-label">Total Pitches</div>
+                    </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-value">43.3%</div>
+                        <div class="mini-stat-label">Market Share</div>
+                    </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-value">₹72.3L</div>
+                        <div class="mini-stat-label">Avg Deal</div>
+                    </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-value">203</div>
+                        <div class="mini-stat-label">Total Deals</div>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; padding: 12px; background: rgba(245, 87, 108, 0.1); border-radius: 8px; text-align: center; color: #f5576c; font-weight: 600;">
+                    Higher Success & Deals!
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🏆 Top 10 States by Pitch Volume</h2>
+            <div class="state-grid">
+                <div class="state-card">
+                    <div class="state-name">
+                        <span class="state-rank">1</span>
+                        Maharashtra
+                    </div>
+                    <div class="state-stats">
+                        <div class="state-stat">
+                            <div class="state-stat-value">165</div>
+                            <div class="state-stat-label">Pitches</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">65.5%</div>
+                            <div class="state-stat-label">Success</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">₹58.0L</div>
+                            <div class="state-stat-label">Avg Deal</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">23.5%</div>
+                            <div class="state-stat-label">Market Share</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">
+                        <span class="state-rank">2</span>
+                        Delhi
+                    </div>
+                    <div class="state-stats">
+                        <div class="state-stat">
+                            <div class="state-stat-value">102</div>
+                            <div class="state-stat-label">Pitches</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">65.7%</div>
+                            <div class="state-stat-label">Success</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">₹74.0L</div>
+                            <div class="state-stat-label">Avg Deal</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">14.5%</div>
+                            <div class="state-stat-label">Market Share</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">
+                        <span class="state-rank">3</span>
+                        Karnataka
+                    </div>
+                    <div class="state-stats">
+                        <div class="state-stat">
+                            <div class="state-stat-value">75</div>
+                            <div class="state-stat-label">Pitches</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">64.0%</div>
+                            <div class="state-stat-label">Success</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">₹64.6L</div>
+                            <div class="state-stat-label">Avg Deal</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">10.7%</div>
+                            <div class="state-stat-label">Market Share</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">
+                        <span class="state-rank">4</span>
+                        Gujarat
+                    </div>
+                    <div class="state-stats">
+                        <div class="state-stat">
+                            <div class="state-stat-value">60</div>
+                            <div class="state-stat-label">Pitches</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">73.3%</div>
+                            <div class="state-stat-label">Success</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">₹48.7L</div>
+                            <div class="state-stat-label">Avg Deal</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">8.5%</div>
+                            <div class="state-stat-label">Market Share</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">
+                        <span class="state-rank">5</span>
+                        Haryana
+                    </div>
+                    <div class="state-stats">
+                        <div class="state-stat">
+                            <div class="state-stat-value">50</div>
+                            <div class="state-stat-label">Pitches</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">72.0%</div>
+                            <div class="state-stat-label">Success</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">₹87.8L</div>
+                            <div class="state-stat-label">Avg Deal</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">7.1%</div>
+                            <div class="state-stat-label">Market Share</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="state-card">
+                    <div class="state-name">
+                        <span class="state-rank">6</span>
+                        Uttar Pradesh
+                    </div>
+                    <div class="state-stats">
+                        <div class="state-stat">
+                            <div class="state-stat-value">36</div>
+                            <div class="state-stat-label">Pitches</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">66.7%</div>
+                            <div class="state-stat-label">Success</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">₹59.3L</div>
+                            <div class="state-stat-label">Avg Deal</div>
+                        </div>
+                        <div class="state-stat">
+                            <div class="state-stat-value">5.1%</div>
+                            <div class="state-stat-label">Market Share</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🌏 Regional Distribution</h2>
+            <div class="region-grid">
+                <div class="region-card">
+                    <div class="region-name">West</div>
+                    <div class="region-stat-row">
+                        <span style="color: #666;">Pitches</span>
+                        <span style="font-weight: 600; color: #333;">258 (36.8%)</span>
+                    </div>
+                    <div class="region-stat-row">
+                        <span style="color: #666;">Success Rate</span>
+                        <span style="font-weight: 600; color: #667eea;">66.0%</span>
+                    </div>
+                    <div class="region-stat-row">
+                        <span style="color: #666;">Avg Deal</span>
+                        <span style="font-weight: 600; color: #333;">₹37.4L</span>
+                    </div>
+                </div>
+
+                <div class="region-card">
+                    <div class="region-name">North</div>
+                    <div class="region-stat-row">
+                        <span style="color: #666;">Pitches</span>
+                        <span style="font-weight: 600; color: #333;">196 (27.9%)</span>
+                    </div>
+                    <div class="region-stat-row">
+                        <span style="color: #666;">Success Rate</span>
+                        <span style="font-weight: 600; color: #667eea;">65.0%</span>
+                    </div>
+                    <div class="region-stat-row">
+                        <span style="color: #666;">Avg Deal</span>
+                        <span style="font-weight: 600; color: #333;">₹47.8L</span>
+                    </div>
+                </div>
+
+                <div class="region-card">
+                    <div class="region-name">South</div>
+                    <div class="region-stat-row">
+                        <span style="color: #666;">Pitches</span>
+                        <span style="font-weight: 600; color: #333;">108 (15.4%)</span>
+                    </div>
+                    <div class="region-stat-row">
+                        <span style="color: #666;">Success Rate</span>
+                        <span style="font-weight: 600; color: #667eea;">68.0%</span>
+                    </div>
+                    <div class="region-stat-row">
+                        <span style="color: #666;">Avg Deal</span>
+                        <span style="font-weight: 600; color: #333;">₹45.7L</span>
+                    </div>
+                </div>
+
+                <div class="region-card">
+                    <div class="region-name">Northeast</div>
+                    <div class="region-stat-row">
+                        <span style="color: #666;">Pitches</span>
+                        <span style="font-weight: 600; color: #333;">5 (0.7%)</span>
+                    </div>
+                    <div class="region-stat-row">
+                        <span style="color: #666;">Success Rate</span>
+                        <span style="font-weight: 600; color: #28a745;">100%</span>
+                    </div>
+                    <div class="region-stat-row">
+                        <span style="color: #666;">Avg Deal</span>
+                        <span style="font-weight: 600; color: #333;">₹81.0L</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💡 Key Geographic Insights</h2>
+            <div class="insights-grid">
+                <div class="insight-box">
+                    <h4>🏆 Maharashtra Dominates</h4>
+                    <p>With 165 pitches (23.5% market share), Maharashtra is the clear startup hub. Mumbai and Pune drive most activity.</p>
+                </div>
+                <div style="padding: 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 12px;">
+                    <h4 style="color: #333; margin-bottom: 12px;">🌾 Non-Metro Surprise</h4>
+                    <p>Non-metro states have slightly higher success (66.8% vs 65.8%) AND larger average deals (₹72.3L vs ₹65.5L)!</p>
+                </div>
+                <div class="insight-box">
+                    <h4>🌏 West Region Leads</h4>
+                    <p>Western India accounts for 36.8% of all pitches, driven by Maharashtra and Gujarat's entrepreneurial ecosystems.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>🎯 Top 5 Concentration</h4>
+                    <p>Top 5 states (Maharashtra, Delhi, Karnataka, Gujarat, Haryana) represent 61.3% of the entire startup ecosystem.</p>
+                </div>
+                <div class="insight-box">
+                    <h4>💯 Northeast Perfect Record</h4>
+                    <p>All 5 pitches from Northeast India received offers (100% success), though sample size is small.</p>
+                </div>
+                <div style="padding: 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 12px;">
+                    <h4 style="color: #333; margin-bottom: 12px;">💰 Haryana Highest Deals</h4>
+                    <p>Despite being 5th in volume, Haryana has the highest average deal size at ₹87.8L, showing quality over quantity.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🏭 State Industry Specializations</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                <div style="padding: 20px; background: #f8f9fa; border-radius: 12px;">
+                    <h4 style="color: #333; margin-bottom: 12px;">Maharashtra</h4>
+                    <p style="color: #667eea; font-weight: 600; font-size: 1.1em;">Food & Beverage (25.8%)</p>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Diverse ecosystem with strong F&B presence</p>
+                </div>
+                <div style="padding: 20px; background: #f8f9fa; border-radius: 12px;">
+                    <h4 style="color: #333; margin-bottom: 12px;">Delhi</h4>
+                    <p style="color: #667eea; font-weight: 600; font-size: 1.1em;">Beauty/Fashion (23.4%)</p>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Capital's focus on consumer brands</p>
+                </div>
+                <div style="padding: 20px; background: #f8f9fa; border-radius: 12px;">
+                    <h4 style="color: #333; margin-bottom: 12px;">Karnataka</h4>
+                    <p style="color: #667eea; font-weight: 600; font-size: 1.1em;">Food & Beverage (24.3%)</p>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Bangalore's startup culture</p>
+                </div>
+                <div style="padding: 20px; background: #f8f9fa; border-radius: 12px;">
+                    <h4 style="color: #333; margin-bottom: 12px;">Haryana</h4>
+                    <p style="color: #667eea; font-weight: 600; font-size: 1.1em;">Beauty/Fashion (32.6%)</p>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Strong D2C brand concentration</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

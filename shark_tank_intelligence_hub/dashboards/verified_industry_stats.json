@@ -1,0 +1,72 @@
+{
+  "Food and Beverage": {
+    "pitches": 154,
+    "deals": 108,
+    "success_rate": 70.12987012987013,
+    "avg_deal": 60.070370833333335,
+    "median_multiple": 12.121212121818182
+  },
+  "Beauty/Fashion": {
+    "pitches": 141,
+    "deals": 96,
+    "success_rate": 68.08510638297872,
+    "avg_deal": 79.07291666666667,
+    "median_multiple": 8.368200836820083
+  },
+  "Technology/Software": {
+    "pitches": 67,
+    "deals": 48,
+    "success_rate": 71.64179104477611,
+    "avg_deal": 80.35416666666667,
+    "median_multiple": 27.916666666666668
+  },
+  "Medical/Health": {
+    "pitches": 64,
+    "deals": 48,
+    "success_rate": 75.0,
+    "avg_deal": 80.06252104166667,
+    "median_multiple": 36.36363636363637
+  },
+  "Manufacturing": {
+    "pitches": 52,
+    "deals": 31,
+    "success_rate": 59.61538461538461,
+    "avg_deal": 52.61290322580645,
+    "median_multiple": 8.333333333333334
+  },
+  "Lifestyle/Home": {
+    "pitches": 46,
+    "deals": 26,
+    "success_rate": 56.52173913043478,
+    "avg_deal": 61.15384615384615,
+    "median_multiple": 11.666666666071428
+  },
+  "Business Services": {
+    "pitches": 42,
+    "deals": 22,
+    "success_rate": 52.38095238095239,
+    "avg_deal": 62.04545454545455,
+    "median_multiple": 13.137254901960784
+  },
+  "Children/Education": {
+    "pitches": 29,
+    "deals": 20,
+    "success_rate": 68.96551724137932,
+    "avg_deal": 64.3,
+    "median_multiple": 7.874015748031496
+  },
+  "Vehicles/Electrical Vehicles": {
+    "pitches": 22,
+    "deals": 12,
+    "success_rate": 54.54545454545454,
+    "avg_deal": 49.25,
+    "median_multiple": 1875.0
+  },
+  "Fitness/Sports/Outdoors": {
+    "pitches": 20,
+    "deals": 16,
+    "success_rate": 80.0,
+    "avg_deal": 69.0625,
+    "median_multiple": 7.407407407407407
+  }
+}

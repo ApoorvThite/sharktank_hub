@@ -1,0 +1,44 @@
+{
+  "Namita": {
+    "deals": 121,
+    "total_investment": 4493.4992685,
+    "avg_deal": 37.136357590909086,
+    "market_share": 26.021505376344084
+  },
+  "Aman": {
+    "deals": 143,
+    "total_investment": 5853.717516000001,
+    "avg_deal": 40.93508752447553,
+    "market_share": 30.752688172043012
+  },
+  "Anupam": {
+    "deals": 108,
+    "total_investment": 3922.3307685,
+    "avg_deal": 36.31787748611111,
+    "market_share": 23.225806451612904
+  },
+  "Peyush": {
+    "deals": 103,
+    "total_investment": 4072.9147525,
+    "avg_deal": 39.54286167475728,
+    "market_share": 22.1505376344086
+  },
+  "Vineeta": {
+    "deals": 91,
+    "total_investment": 3043.9545,
+    "avg_deal": 33.45004945054945,
+    "market_share": 19.56989247311828
+  },
+  "Ritesh": {
+    "deals": 53,
+    "total_investment": 2248.4845,
+    "avg_deal": 42.42423584905661,
+    "market_share": 11.397849462365592
+  },
+  "Amit": {
+    "deals": 36,
+    "total_investment": 1284.4,
+    "avg_deal": 35.67777777777778,
+    "market_share": 7.741935483870968
+  }
+}

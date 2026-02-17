@@ -1,0 +1,56 @@
+{
+  "top_states": [
+    {
+      "name": "Maharashtra",
+      "pitches": 163,
+      "success_rate": 65.6441717791411
+    },
+    {
+      "name": "Delhi",
+      "pitches": 94,
+      "success_rate": 65.95744680851064
+    },
+    {
+      "name": "Karnataka",
+      "pitches": 70,
+      "success_rate": 65.71428571428571
+    },
+    {
+      "name": "Gujarat",
+      "pitches": 57,
+      "success_rate": 73.68421052631578
+    },
+    {
+      "name": "Haryana",
+      "pitches": 46,
+      "success_rate": 69.56521739130434
+    },
+    {
+      "name": "Uttar Pradesh",
+      "pitches": 34,
+      "success_rate": 64.70588235294117
+    },
+    {
+      "name": "Rajasthan",
+      "pitches": 32,
+      "success_rate": 59.375
+    },
+    {
+      "name": "Telangana",
+      "pitches": 22,
+      "success_rate": 72.72727272727273
+    },
+    {
+      "name": "West Bengal",
+      "pitches": 18,
+      "success_rate": 61.111111111111114
+    },
+    {
+      "name": "Punjab",
+      "pitches": 17,
+      "success_rate": 41.17647058823529
+    }
+  ],
+  "metro_success": 67.0,
+  "non_metro_success": 65.0
+}

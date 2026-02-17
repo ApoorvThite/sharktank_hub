@@ -1,0 +1,302 @@
+{
+  "Food and Beverage": {
+    "industry": "Food and Beverage",
+    "total_pitches": 154,
+    "market_share": 21.937321937321936,
+    "offer_rate": 0.7012987012987013,
+    "acceptance_rate": 0.8333333333333334,
+    "avg_revenue": 180.0,
+    "avg_gross_margin": 50.72727272727273,
+    "avg_net_margin": 20.428571428571427,
+    "avg_ask_amount": 60.0,
+    "avg_valuation": 2500.0,
+    "avg_deal_size": 72.084445,
+    "avg_equity_given": 8.519222222222224,
+    "revenue_multiple": 12.09921355172414,
+    "top_states": {
+      "Maharashtra": 42,
+      "Delhi": 22,
+      "Karnataka": 17
+    },
+    "avg_age_group": "Middle",
+    "female_founder_pct": 46.75324675324675,
+    "patent_rate": 2.5974025974025974,
+    "bootstrap_rate": 6.493506493506493,
+    "top_sharks": {
+      "Aman": 31,
+      "Vineeta": 29,
+      "Anupam": 26
+    },
+    "segments": {}
+  },
+  "Beauty/Fashion": {
+    "industry": "Beauty/Fashion",
+    "total_pitches": 141,
+    "market_share": 20.085470085470085,
+    "offer_rate": 0.6808510638297872,
+    "acceptance_rate": 0.8645833333333334,
+    "avg_revenue": 380.0,
+    "avg_gross_margin": 63.354609929078016,
+    "avg_net_margin": 16.56737588652482,
+    "avg_ask_amount": 75.0,
+    "avg_valuation": 3000.0,
+    "avg_deal_size": 91.4578313253012,
+    "avg_equity_given": 8.833132530120482,
+    "revenue_multiple": 8.695652173913043,
+    "top_states": {
+      "Maharashtra": 34,
+      "Delhi": 22,
+      "Haryana": 15
+    },
+    "avg_age_group": "Middle",
+    "female_founder_pct": 60.99290780141844,
+    "patent_rate": 2.8368794326241136,
+    "bootstrap_rate": 9.219858156028367,
+    "top_sharks": {
+      "Aman": 31,
+      "Namita": 26,
+      "Anupam": 26
+    },
+    "segments": {}
+  },
+  "Technology/Software": {
+    "industry": "Technology/Software",
+    "total_pitches": 67,
+    "market_share": 9.544159544159545,
+    "offer_rate": 0.7164179104477612,
+    "acceptance_rate": 0.8958333333333334,
+    "avg_revenue": 120.0,
+    "avg_gross_margin": 50.37313432835821,
+    "avg_net_margin": 34.298507462686565,
+    "avg_ask_amount": 70.0,
+    "avg_valuation": 4000.0,
+    "avg_deal_size": 89.69767441860465,
+    "avg_equity_given": 6.93046511627907,
+    "revenue_multiple": 29.239766081871345,
+    "top_states": {
+      "Maharashtra": 18,
+      "Delhi": 11,
+      "Karnataka": 4
+    },
+    "avg_age_group": "Middle",
+    "female_founder_pct": 20.8955223880597,
+    "patent_rate": 11.940298507462686,
+    "bootstrap_rate": 2.9850746268656714,
+    "top_sharks": {
+      "Aman": 16,
+      "Peyush": 14,
+      "Namita": 10
+    },
+    "segments": {}
+  },
+  "Medical/Health": {
+    "industry": "Medical/Health",
+    "total_pitches": 64,
+    "market_share": 9.116809116809117,
+    "offer_rate": 0.75,
+    "acceptance_rate": 0.9375,
+    "avg_revenue": 110.0,
+    "avg_gross_margin": 67.625,
+    "avg_net_margin": 19.796875,
+    "avg_ask_amount": 90.0,
+    "avg_valuation": 4000.0,
+    "avg_deal_size": 85.40002244444445,
+    "avg_equity_given": 5.210666666666667,
+    "revenue_multiple": 36.03603603603604,
+    "top_states": {
+      "Maharashtra": 11,
+      "Karnataka": 8,
+      "Delhi": 6
+    },
+    "avg_age_group": "Middle",
+    "female_founder_pct": 29.6875,
+    "patent_rate": 26.5625,
+    "bootstrap_rate": 6.25,
+    "top_sharks": {
+      "Namita": 23,
+      "Aman": 18,
+      "Peyush": 16
+    },
+    "segments": {}
+  },
+  "Manufacturing": {
+    "industry": "Manufacturing",
+    "total_pitches": 52,
+    "market_share": 7.4074074074074066,
+    "offer_rate": 0.5961538461538461,
+    "acceptance_rate": 0.8387096774193549,
+    "avg_revenue": 242.0,
+    "avg_gross_margin": 48.11538461538461,
+    "avg_net_margin": 18.192307692307693,
+    "avg_ask_amount": 60.0,
+    "avg_valuation": 2500.0,
+    "avg_deal_size": 62.73076923076923,
+    "avg_equity_given": 7.187692307692307,
+    "revenue_multiple": 13.213952098274458,
+    "top_states": {
+      "Maharashtra": 12,
+      "Delhi": 6,
+      "Gujarat": 6
+    },
+    "avg_age_group": "Middle",
+    "female_founder_pct": 42.30769230769231,
+    "patent_rate": 15.384615384615385,
+    "bootstrap_rate": 3.8461538461538463,
+    "top_sharks": {
+      "Peyush": 12,
+      "Aman": 10,
+      "Namita": 9
+    },
+    "segments": {}
+  },
+  "Lifestyle/Home": {
+    "industry": "Lifestyle/Home",
+    "total_pitches": 46,
+    "market_share": 6.552706552706552,
+    "offer_rate": 0.5652173913043478,
+    "acceptance_rate": 0.7692307692307693,
+    "avg_revenue": 330.0,
+    "avg_gross_margin": 65.15217391304348,
+    "avg_net_margin": 26.456521739130434,
+    "avg_ask_amount": 65.0,
+    "avg_valuation": 3750.0,
+    "avg_deal_size": 79.5,
+    "avg_equity_given": 5.3825,
+    "revenue_multiple": 11.61301628324167,
+    "top_states": {
+      "Karnataka": 7,
+      "Delhi": 6,
+      "Maharashtra": 6
+    },
+    "avg_age_group": "Middle",
+    "female_founder_pct": 50.0,
+    "patent_rate": 10.869565217391305,
+    "bootstrap_rate": 2.1739130434782608,
+    "top_sharks": {
+      "Namita": 7,
+      "Vineeta": 7,
+      "Aman": 6
+    },
+    "segments": {}
+  },
+  "Business Services": {
+    "industry": "Business Services",
+    "total_pitches": 42,
+    "market_share": 5.982905982905983,
+    "offer_rate": 0.5238095238095238,
+    "acceptance_rate": 0.8181818181818182,
+    "avg_revenue": 255.0,
+    "avg_gross_margin": 52.69047619047619,
+    "avg_net_margin": 12.523809523809524,
+    "avg_ask_amount": 85.0,
+    "avg_valuation": 3000.0,
+    "avg_deal_size": 75.83333333333333,
+    "avg_equity_given": 4.280555555555555,
+    "revenue_multiple": 11.71875,
+    "top_states": {
+      "Uttar Pradesh": 6,
+      "Maharashtra": 6,
+      "Delhi": 5
+    },
+    "avg_age_group": "Middle",
+    "female_founder_pct": 57.14285714285714,
+    "patent_rate": 2.380952380952381,
+    "bootstrap_rate": 4.761904761904762,
+    "top_sharks": {
+      "Peyush": 9,
+      "Aman": 8,
+      "Namita": 7
+    },
+    "segments": {}
+  },
+  "Children/Education": {
+    "industry": "Children/Education",
+    "total_pitches": 29,
+    "market_share": 4.131054131054131,
+    "offer_rate": 0.6896551724137931,
+    "acceptance_rate": 0.85,
+    "avg_revenue": 223.0,
+    "avg_gross_margin": 53.793103448275865,
+    "avg_net_margin": 0.0,
+    "avg_ask_amount": 60.0,
+    "avg_valuation": 5000.0,
+    "avg_deal_size": 75.6470588235294,
+    "avg_equity_given": 7.094117647058823,
+    "revenue_multiple": 11.671335200746965,
+    "top_states": {
+      "Maharashtra": 7,
+      "Gujarat": 4,
+      "Karnataka": 4
+    },
+    "avg_age_group": "Middle",
+    "female_founder_pct": 62.06896551724138,
+    "patent_rate": 13.793103448275861,
+    "bootstrap_rate": 3.4482758620689653,
+    "top_sharks": {
+      "Namita": 8,
+      "Aman": 6,
+      "Anupam": 6
+    },
+    "segments": {}
+  },
+  "Vehicles/Electrical Vehicles": {
+    "industry": "Vehicles/Electrical Vehicles",
+    "total_pitches": 22,
+    "market_share": 3.133903133903134,
+    "offer_rate": 0.5454545454545454,
+    "acceptance_rate": 0.9166666666666666,
+    "avg_revenue": 2.0,
+    "avg_gross_margin": 0.0,
+    "avg_net_margin": 0.0,
+    "avg_ask_amount": 75.0,
+    "avg_valuation": 5000.0,
+    "avg_deal_size": 59.1,
+    "avg_equity_given": 8.867,
+    "revenue_multiple": 1000.0,
+    "top_states": {
+      "Maharashtra": 6,
+      "Gujarat": 4,
+      "Telangana": 3
+    },
+    "avg_age_group": "Middle",
+    "female_founder_pct": 9.090909090909092,
+    "patent_rate": 9.090909090909092,
+    "bootstrap_rate": 4.545454545454546,
+    "top_sharks": {
+      "Aman": 3,
+      "Vineeta": 3,
+      "Anupam": 2
+    },
+    "segments": {}
+  },
+  "Fitness/Sports/Outdoors": {
+    "industry": "Fitness/Sports/Outdoors",
+    "total_pitches": 20,
+    "market_share": 2.849002849002849,
+    "offer_rate": 0.8,
+    "acceptance_rate": 0.9375,
+    "avg_revenue": 270.0,
+    "avg_gross_margin": 71.6,
+    "avg_net_margin": 26.7,
+    "avg_ask_amount": 75.0,
+    "avg_valuation": 2500.0,
+    "avg_deal_size": 73.66666666666667,
+    "avg_equity_given": 5.11,
+    "revenue_multiple": 7.380073800738008,
+    "top_states": {
+      "Karnataka": 5,
+      "Maharashtra": 5,
+      "Delhi": 3
+    },
+    "avg_age_group": "Middle",
+    "female_founder_pct": 10.0,
+    "patent_rate": 15.0,
+    "bootstrap_rate": 5.0,
+    "top_sharks": {
+      "Namita": 5,
+      "Vineeta": 5,
+      "Aman": 4
+    },
+    "segments": {}
+  }
+}

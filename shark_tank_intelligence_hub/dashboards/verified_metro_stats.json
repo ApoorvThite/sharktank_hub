@@ -1,0 +1,14 @@
+{
+  "metro": {
+    "pitches": 379,
+    "success_rate": 65.96306068601582,
+    "avg_deal": 64.22920424,
+    "market_share": 53.98860398860399
+  },
+  "non_metro": {
+    "pitches": 323,
+    "success_rate": 66.56346749226006,
+    "avg_deal": 73.4214534883721,
+    "market_share": 46.01139601139601
+  }
+}

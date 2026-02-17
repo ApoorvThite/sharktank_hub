@@ -1,0 +1,99 @@
+{
+  "top_10_states": [
+    {
+      "state": "Maharashtra",
+      "pitches": 165,
+      "deals": 108,
+      "success_rate": 65.45454545454545,
+      "avg_deal": 57.96575009259259,
+      "market_share": 23.504273504273502
+    },
+    {
+      "state": "Delhi",
+      "pitches": 102,
+      "deals": 67,
+      "success_rate": 65.68627450980392,
+      "avg_deal": 74.02985074626865,
+      "market_share": 14.529914529914532
+    },
+    {
+      "state": "Karnataka",
+      "pitches": 75,
+      "deals": 48,
+      "success_rate": 64.0,
+      "avg_deal": 64.5625,
+      "market_share": 10.683760683760683
+    },
+    {
+      "state": "Gujarat",
+      "pitches": 60,
+      "deals": 44,
+      "success_rate": 73.33333333333333,
+      "avg_deal": 48.65909090909091,
+      "market_share": 8.547008547008547
+    },
+    {
+      "state": "Haryana",
+      "pitches": 50,
+      "deals": 36,
+      "success_rate": 72.0,
+      "avg_deal": 87.80590277777777,
+      "market_share": 7.122507122507122
+    },
+    {
+      "state": "Uttar Pradesh",
+      "pitches": 36,
+      "deals": 24,
+      "success_rate": 66.66666666666666,
+      "avg_deal": 59.333333333333336,
+      "market_share": 5.128205128205128
+    },
+    {
+      "state": "Rajasthan",
+      "pitches": 32,
+      "deals": 19,
+      "success_rate": 59.375,
+      "avg_deal": 55.78947368421053,
+      "market_share": 4.5584045584045585
+    },
+    {
+      "state": "Telangana",
+      "pitches": 24,
+      "deals": 18,
+      "success_rate": 75.0,
+      "avg_deal": 71.55555833333334,
+      "market_share": 3.418803418803419
+    },
+    {
+      "state": "Punjab",
+      "pitches": 21,
+      "deals": 10,
+      "success_rate": 47.61904761904761,
+      "avg_deal": 96.5,
+      "market_share": 2.9914529914529915
+    },
+    {
+      "state": "West Bengal",
+      "pitches": 19,
+      "deals": 12,
+      "success_rate": 63.1578947368421,
+      "avg_deal": 75.0,
+      "market_share": 2.7065527065527064
+    }
+  ],
+  "metro": {
+    "pitches": 398,
+    "deals": 262,
+    "success_rate": 65.82914572864321,
+    "avg_deal": 65.50496587786259,
+    "market_share": 56.69515669515669
+  },
+  "non_metro": {
+    "pitches": 304,
+    "deals": 203,
+    "success_rate": 66.77631578947368,
+    "avg_deal": 72.31828817733991,
+    "market_share": 43.3048433048433
+  },
+  "total_unique_states": 24
+}

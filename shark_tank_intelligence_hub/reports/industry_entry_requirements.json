@@ -1,0 +1,322 @@
+{
+  "Food and Beverage": {
+    "industry": "Food and Beverage",
+    "sample_size": 108,
+    "minimum_revenue": {
+      "25th_percentile": 180.0,
+      "50th_percentile": 180.0,
+      "recommended": 180.0
+    },
+    "minimum_gross_margin": {
+      "25th_percentile": 50.5,
+      "recommended": 50.5
+    },
+    "minimum_net_margin": {
+      "25th_percentile": 20.0,
+      "recommended": 20.0
+    },
+    "typical_ask_range": {
+      "lower": 50.0,
+      "upper": 90.0,
+      "median": 60.0
+    },
+    "typical_valuation_range": {
+      "lower": 1250.0,
+      "upper": 5000.0,
+      "median": 2500.0
+    },
+    "success_boosters": {
+      "has_patent": false,
+      "female_founder": true,
+      "bootstrapped": false
+    }
+  },
+  "Beauty/Fashion": {
+    "industry": "Beauty/Fashion",
+    "sample_size": 96,
+    "minimum_revenue": {
+      "25th_percentile": 348.75,
+      "50th_percentile": 380.0,
+      "recommended": 380.0
+    },
+    "minimum_gross_margin": {
+      "25th_percentile": 63.0,
+      "recommended": 63.0
+    },
+    "minimum_net_margin": {
+      "25th_percentile": 16.0,
+      "recommended": 16.0
+    },
+    "typical_ask_range": {
+      "lower": 50.0,
+      "upper": 100.0,
+      "median": 75.0
+    },
+    "typical_valuation_range": {
+      "lower": 1629.03787875,
+      "upper": 7500.0,
+      "median": 4000.0
+    },
+    "success_boosters": {
+      "has_patent": false,
+      "female_founder": true,
+      "bootstrapped": false
+    }
+  },
+  "Technology/Software": {
+    "industry": "Technology/Software",
+    "sample_size": 48,
+    "minimum_revenue": {
+      "25th_percentile": 120.0,
+      "50th_percentile": 120.0,
+      "recommended": 120.0
+    },
+    "minimum_gross_margin": {
+      "25th_percentile": 50.0,
+      "recommended": 50.0
+    },
+    "minimum_net_margin": {
+      "25th_percentile": 35.0,
+      "recommended": 35.0
+    },
+    "typical_ask_range": {
+      "lower": 50.0,
+      "upper": 100.0,
+      "median": 60.0
+    },
+    "typical_valuation_range": {
+      "lower": 2000.0,
+      "upper": 6375.0,
+      "median": 4000.0
+    },
+    "success_boosters": {
+      "has_patent": false,
+      "female_founder": false,
+      "bootstrapped": false
+    }
+  },
+  "Medical/Health": {
+    "industry": "Medical/Health",
+    "sample_size": 48,
+    "minimum_revenue": {
+      "25th_percentile": 110.0,
+      "50th_percentile": 110.0,
+      "recommended": 110.0
+    },
+    "minimum_gross_margin": {
+      "25th_percentile": 68.0,
+      "recommended": 68.0
+    },
+    "minimum_net_margin": {
+      "25th_percentile": 20.0,
+      "recommended": 20.0
+    },
+    "typical_ask_range": {
+      "lower": 52.25,
+      "upper": 100.0,
+      "median": 75.0
+    },
+    "typical_valuation_range": {
+      "lower": 2767.85714275,
+      "upper": 6666.666667,
+      "median": 4000.0
+    },
+    "success_boosters": {
+      "has_patent": true,
+      "female_founder": true,
+      "bootstrapped": false
+    }
+  },
+  "Manufacturing": {
+    "industry": "Manufacturing",
+    "sample_size": 31,
+    "minimum_revenue": {
+      "25th_percentile": 242.0,
+      "50th_percentile": 242.0,
+      "recommended": 242.0
+    },
+    "minimum_gross_margin": {
+      "25th_percentile": 50.0,
+      "recommended": 50.0
+    },
+    "minimum_net_margin": {
+      "25th_percentile": 18.0,
+      "recommended": 18.0
+    },
+    "typical_ask_range": {
+      "lower": 50.0,
+      "upper": 75.0,
+      "median": 50.0
+    },
+    "typical_valuation_range": {
+      "lower": 1533.3333335,
+      "upper": 5050.0,
+      "median": 2000.0
+    },
+    "success_boosters": {
+      "has_patent": false,
+      "female_founder": true,
+      "bootstrapped": false
+    }
+  },
+  "Lifestyle/Home": {
+    "industry": "Lifestyle/Home",
+    "sample_size": 26,
+    "minimum_revenue": {
+      "25th_percentile": 330.0,
+      "50th_percentile": 330.0,
+      "recommended": 330.0
+    },
+    "minimum_gross_margin": {
+      "25th_percentile": 65.0,
+      "recommended": 65.0
+    },
+    "minimum_net_margin": {
+      "25th_percentile": 26.5,
+      "recommended": 26.5
+    },
+    "typical_ask_range": {
+      "lower": 50.0,
+      "upper": 100.0,
+      "median": 70.0
+    },
+    "typical_valuation_range": {
+      "lower": 2125.0,
+      "upper": 6950.0,
+      "median": 4750.0
+    },
+    "success_boosters": {
+      "has_patent": false,
+      "female_founder": true,
+      "bootstrapped": false
+    }
+  },
+  "Business Services": {
+    "industry": "Business Services",
+    "sample_size": 22,
+    "minimum_revenue": {
+      "25th_percentile": 153.75,
+      "50th_percentile": 255.0,
+      "recommended": 255.0
+    },
+    "minimum_gross_margin": {
+      "25th_percentile": 52.0,
+      "recommended": 52.0
+    },
+    "minimum_net_margin": {
+      "25th_percentile": 12.0,
+      "recommended": 12.0
+    },
+    "typical_ask_range": {
+      "lower": 69.0,
+      "upper": 100.0,
+      "median": 95.0
+    },
+    "typical_valuation_range": {
+      "lower": 2125.0,
+      "upper": 9500.0,
+      "median": 3875.0
+    },
+    "success_boosters": {
+      "has_patent": false,
+      "female_founder": true,
+      "bootstrapped": false
+    }
+  },
+  "Children/Education": {
+    "industry": "Children/Education",
+    "sample_size": 20,
+    "minimum_revenue": {
+      "25th_percentile": 150.0,
+      "50th_percentile": 223.0,
+      "recommended": 200.37
+    },
+    "minimum_gross_margin": {
+      "25th_percentile": 54.0,
+      "recommended": 54.0
+    },
+    "minimum_net_margin": {
+      "25th_percentile": 0.0,
+      "recommended": 0.0
+    },
+    "typical_ask_range": {
+      "lower": 37.5,
+      "upper": 100.0,
+      "median": 75.0
+    },
+    "typical_valuation_range": {
+      "lower": 1500.0,
+      "upper": 7500.0,
+      "median": 5000.0
+    },
+    "success_boosters": {
+      "has_patent": false,
+      "female_founder": true,
+      "bootstrapped": false
+    }
+  },
+  "Vehicles/Electrical Vehicles": {
+    "industry": "Vehicles/Electrical Vehicles",
+    "sample_size": 12,
+    "minimum_revenue": {
+      "25th_percentile": 2.0,
+      "50th_percentile": 2.0,
+      "recommended": 2.0
+    },
+    "minimum_gross_margin": {
+      "25th_percentile": 0.0,
+      "recommended": 0.0
+    },
+    "minimum_net_margin": {
+      "25th_percentile": 0.0,
+      "recommended": 0.0
+    },
+    "typical_ask_range": {
+      "lower": 47.5,
+      "upper": 100.0,
+      "median": 75.0
+    },
+    "typical_valuation_range": {
+      "lower": 1000.0,
+      "upper": 10000.0,
+      "median": 4375.0
+    },
+    "success_boosters": {
+      "has_patent": false,
+      "female_founder": false,
+      "bootstrapped": false
+    }
+  },
+  "Fitness/Sports/Outdoors": {
+    "industry": "Fitness/Sports/Outdoors",
+    "sample_size": 16,
+    "minimum_revenue": {
+      "25th_percentile": 258.25,
+      "50th_percentile": 270.0,
+      "recommended": 269.55
+    },
+    "minimum_gross_margin": {
+      "25th_percentile": 72.5,
+      "recommended": 72.5
+    },
+    "minimum_net_margin": {
+      "25th_percentile": 27.5,
+      "recommended": 27.5
+    },
+    "typical_ask_range": {
+      "lower": 47.5,
+      "upper": 85.0,
+      "median": 77.5
+    },
+    "typical_valuation_range": {
+      "lower": 1750.0,
+      "upper": 8000.0,
+      "median": 2250.0
+    },
+    "success_boosters": {
+      "has_patent": false,
+      "female_founder": false,
+      "bootstrapped": false
+    }
+  }
+}

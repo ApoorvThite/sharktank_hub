@@ -1,0 +1,11 @@
+Industry,Sample_Size,Min_Revenue_Recommended,Min_Gross_Margin,Typical_Ask_Lower,Typical_Ask_Upper,Typical_Valuation_Median,Patent_Booster,Female_Founder_Booster,Bootstrapped_Booster
+Food and Beverage,108,₹180L,50.5%,₹50L,₹90L,₹2500L,False,True,False
+Beauty/Fashion,96,₹380L,63.0%,₹50L,₹100L,₹4000L,False,True,False
+Technology/Software,48,₹120L,50.0%,₹50L,₹100L,₹4000L,False,False,False
+Medical/Health,48,₹110L,68.0%,₹52L,₹100L,₹4000L,True,True,False
+Manufacturing,31,₹242L,50.0%,₹50L,₹75L,₹2000L,False,True,False
+Lifestyle/Home,26,₹330L,65.0%,₹50L,₹100L,₹4750L,False,True,False
+Business Services,22,₹255L,52.0%,₹69L,₹100L,₹3875L,False,True,False
+Children/Education,20,₹200L,54.0%,₹38L,₹100L,₹5000L,False,True,False
+Vehicles/Electrical Vehicles,12,₹2L,0.0%,₹48L,₹100L,₹4375L,False,False,False
+Fitness/Sports/Outdoors,16,₹270L,72.5%,₹48L,₹85L,₹2250L,False,False,False

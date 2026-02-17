@@ -1,0 +1,233 @@
+{
+  "Food and Beverage": {
+    "Avg Revenue": {
+      "successful": 180.0,
+      "unsuccessful": 180.0,
+      "difference_pct": 0.0
+    },
+    "Avg Gross Margin": {
+      "successful": 51.032407407407405,
+      "unsuccessful": 50.01086956521739,
+      "difference_pct": 2.0426316340248056
+    },
+    "Avg Net Margin": {
+      "successful": 20.583333333333332,
+      "unsuccessful": 20.065217391304348,
+      "difference_pct": 2.5821596244131406
+    },
+    "Patent %": {
+      "successful": 0.027777777777777776,
+      "unsuccessful": 0.021739130434782608,
+      "difference_pct": 27.777777777777775
+    },
+    "Bootstrapped %": {
+      "successful": 0.06481481481481481,
+      "unsuccessful": 0.06521739130434782,
+      "difference_pct": -0.6172839506172867
+    },
+    "Female Founder %": {
+      "successful": 0.5,
+      "unsuccessful": 0.391304347826087,
+      "difference_pct": 27.777777777777775
+    }
+  },
+  "Beauty/Fashion": {
+    "Avg Revenue": {
+      "successful": 380.0,
+      "unsuccessful": 380.0,
+      "difference_pct": 0.0
+    },
+    "Avg Gross Margin": {
+      "successful": 63.552083333333336,
+      "unsuccessful": 62.93333333333333,
+      "difference_pct": 0.9831832627118734
+    },
+    "Avg Net Margin": {
+      "successful": 16.59375,
+      "unsuccessful": 16.511111111111113,
+      "difference_pct": 0.5005047106325601
+    },
+    "Patent %": {
+      "successful": 0.020833333333333332,
+      "unsuccessful": 0.044444444444444446,
+      "difference_pct": -53.125
+    },
+    "Bootstrapped %": {
+      "successful": 0.10416666666666667,
+      "unsuccessful": 0.06666666666666667,
+      "difference_pct": 56.250000000000014
+    },
+    "Female Founder %": {
+      "successful": 0.6354166666666666,
+      "unsuccessful": 0.5555555555555556,
+      "difference_pct": 14.374999999999988
+    }
+  },
+  "Technology/Software": {
+    "Avg Revenue": {
+      "successful": 120.0,
+      "unsuccessful": 120.0,
+      "difference_pct": 0.0
+    },
+    "Avg Gross Margin": {
+      "successful": 50.833333333333336,
+      "unsuccessful": 49.21052631578947,
+      "difference_pct": 3.2976827094474226
+    },
+    "Avg Net Margin": {
+      "successful": 35.208333333333336,
+      "unsuccessful": 32.0,
+      "difference_pct": 10.026041666666675
+    },
+    "Patent %": {
+      "successful": 0.125,
+      "unsuccessful": 0.10526315789473684,
+      "difference_pct": 18.750000000000007
+    },
+    "Bootstrapped %": {
+      "successful": 0.0,
+      "unsuccessful": 0.10526315789473684,
+      "difference_pct": -100.0
+    },
+    "Female Founder %": {
+      "successful": 0.16666666666666666,
+      "unsuccessful": 0.3157894736842105,
+      "difference_pct": -47.22222222222222
+    }
+  },
+  "Medical/Health": {
+    "Avg Revenue": {
+      "successful": 110.0,
+      "unsuccessful": 110.0,
+      "difference_pct": 0.0
+    },
+    "Avg Gross Margin": {
+      "successful": 68.3125,
+      "unsuccessful": 65.5625,
+      "difference_pct": 4.194470924690181
+    },
+    "Avg Net Margin": {
+      "successful": 19.729166666666668,
+      "unsuccessful": 20.0,
+      "difference_pct": -1.3541666666666607
+    },
+    "Patent %": {
+      "successful": 0.3125,
+      "unsuccessful": 0.125,
+      "difference_pct": 150.0
+    },
+    "Female Founder %": {
+      "successful": 0.3541666666666667,
+      "unsuccessful": 0.125,
+      "difference_pct": 183.33333333333334
+    }
+  },
+  "Manufacturing": {
+    "Avg Revenue": {
+      "successful": 242.0,
+      "unsuccessful": 242.0,
+      "difference_pct": 0.0
+    },
+    "Avg Gross Margin": {
+      "successful": 45.806451612903224,
+      "unsuccessful": 51.523809523809526,
+      "difference_pct": -11.096535686601879
+    },
+    "Avg Net Margin": {
+      "successful": 18.419354838709676,
+      "unsuccessful": 17.857142857142858,
+      "difference_pct": 3.1483870967741834
+    },
+    "Patent %": {
+      "successful": 0.06451612903225806,
+      "unsuccessful": 0.2857142857142857,
+      "difference_pct": -77.41935483870968
+    },
+    "Female Founder %": {
+      "successful": 0.45161290322580644,
+      "unsuccessful": 0.38095238095238093,
+      "difference_pct": 18.548387096774196
+    }
+  },
+  "Lifestyle/Home": {
+    "Avg Revenue": {
+      "successful": 330.0,
+      "unsuccessful": 330.0,
+      "difference_pct": 0.0
+    },
+    "Avg Gross Margin": {
+      "successful": 65.46153846153847,
+      "unsuccessful": 64.75,
+      "difference_pct": 1.0989010989011072
+    },
+    "Avg Net Margin": {
+      "successful": 24.653846153846153,
+      "unsuccessful": 28.8,
+      "difference_pct": -14.396367521367527
+    },
+    "Patent %": {
+      "successful": 0.15384615384615385,
+      "unsuccessful": 0.05,
+      "difference_pct": 207.6923076923077
+    },
+    "Female Founder %": {
+      "successful": 0.5384615384615384,
+      "unsuccessful": 0.45,
+      "difference_pct": 19.65811965811965
+    }
+  },
+  "Business Services": {
+    "Avg Revenue": {
+      "successful": 255.0,
+      "unsuccessful": 255.0,
+      "difference_pct": 0.0
+    },
+    "Avg Gross Margin": {
+      "successful": 52.81818181818182,
+      "unsuccessful": 52.55,
+      "difference_pct": 0.5103364760833928
+    },
+    "Avg Net Margin": {
+      "successful": 12.454545454545455,
+      "unsuccessful": 12.6,
+      "difference_pct": -1.1544011544011479
+    },
+    "Patent %": {
+      "successful": 0.0,
+      "unsuccessful": 0.05,
+      "difference_pct": -100.0
+    },
+    "Bootstrapped %": {
+      "successful": 0.045454545454545456,
+      "unsuccessful": 0.05,
+      "difference_pct": -9.090909090909093
+    },
+    "Female Founder %": {
+      "successful": 0.5454545454545454,
+      "unsuccessful": 0.6,
+      "difference_pct": -9.090909090909093
+    }
+  },
+  "Children/Education": {
+    "Avg Revenue": {
+      "successful": 223.0,
+      "unsuccessful": 223.0,
+      "difference_pct": 0.0
+    },
+    "Avg Gross Margin": {
+      "successful": 53.5,
+      "unsuccessful": 54.44444444444444,
+      "difference_pct": -1.7346938775510177
+    },
+    "Patent %": {
+      "successful": 0.15,
+      "unsuccessful": 0.1111111111111111,
+      "difference_pct": 35.0
+    },
+    "Female Founder %": {
+      "successful": 0.65,
+      "unsuccessful": 0.5555555555555556,
+      "difference_pct": 17.0
+    }
+  }
+}

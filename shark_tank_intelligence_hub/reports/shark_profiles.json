@@ -1,0 +1,240 @@
+{
+  "Namita": {
+    "name": "Namita",
+    "total_deals": 121,
+    "total_invested": 4493.4992685,
+    "avg_deal_size": 37.136357590909086,
+    "avg_equity": 3.4381123966942146,
+    "episodes_present": 526,
+    "investment_rate": 0.2300380228136882,
+    "top_industries": {
+      "Beauty/Fashion": 26,
+      "Medical/Health": 23,
+      "Food and Beverage": 19,
+      "Technology/Software": 10,
+      "Manufacturing": 9
+    },
+    "top_partners": [
+      [
+        "Aman",
+        45
+      ],
+      [
+        "Anupam",
+        30
+      ],
+      [
+        "Vineeta",
+        29
+      ]
+    ],
+    "deal_success_rate": 1.0,
+    "avg_startup_revenue": 594.2933884297521,
+    "avg_startup_valuation": 5911.979121179339,
+    "community": 0
+  },
+  "Aman": {
+    "name": "Aman",
+    "total_deals": 143,
+    "total_invested": 5853.717516,
+    "avg_deal_size": 40.93508752447552,
+    "avg_equity": 3.0727174825174823,
+    "episodes_present": 573,
+    "investment_rate": 0.24956369982547993,
+    "top_industries": {
+      "Food and Beverage": 31,
+      "Beauty/Fashion": 31,
+      "Medical/Health": 18,
+      "Technology/Software": 16,
+      "Manufacturing": 10
+    },
+    "top_partners": [
+      [
+        "Namita",
+        45
+      ],
+      [
+        "Anupam",
+        44
+      ],
+      [
+        "Peyush",
+        44
+      ]
+    ],
+    "deal_success_rate": 1.0,
+    "avg_startup_revenue": 445.87412587412587,
+    "avg_startup_valuation": 5974.749793731468,
+    "community": 0
+  },
+  "Anupam": {
+    "name": "Anupam",
+    "total_deals": 108,
+    "total_invested": 3922.3307685,
+    "avg_deal_size": 36.31787748611111,
+    "avg_equity": 4.648962962962964,
+    "episodes_present": 567,
+    "investment_rate": 0.19047619047619047,
+    "top_industries": {
+      "Beauty/Fashion": 26,
+      "Food and Beverage": 26,
+      "Medical/Health": 14,
+      "Manufacturing": 8,
+      "Technology/Software": 7
+    },
+    "top_partners": [
+      [
+        "Aman",
+        44
+      ],
+      [
+        "Peyush",
+        36
+      ],
+      [
+        "Vineeta",
+        36
+      ]
+    ],
+    "deal_success_rate": 1.0,
+    "avg_startup_revenue": 646.9351851851852,
+    "avg_startup_valuation": 4089.523264209259,
+    "community": 0
+  },
+  "Peyush": {
+    "name": "Peyush",
+    "total_deals": 103,
+    "total_invested": 4072.9147525000003,
+    "avg_deal_size": 39.54286167475728,
+    "avg_equity": 5.735563106796116,
+    "episodes_present": 388,
+    "investment_rate": 0.2654639175257732,
+    "top_industries": {
+      "Food and Beverage": 17,
+      "Medical/Health": 16,
+      "Beauty/Fashion": 14,
+      "Technology/Software": 14,
+      "Manufacturing": 12
+    },
+    "top_partners": [
+      [
+        "Aman",
+        44
+      ],
+      [
+        "Anupam",
+        36
+      ],
+      [
+        "Namita",
+        27
+      ]
+    ],
+    "deal_success_rate": 1.0,
+    "avg_startup_revenue": 288.5388349514563,
+    "avg_startup_valuation": 5553.283615352427,
+    "community": 0
+  },
+  "Vineeta": {
+    "name": "Vineeta",
+    "total_deals": 91,
+    "total_invested": 3043.9545,
+    "avg_deal_size": 33.45004945054945,
+    "avg_equity": 3.6577252747252746,
+    "episodes_present": 445,
+    "investment_rate": 0.20449438202247192,
+    "top_industries": {
+      "Food and Beverage": 29,
+      "Beauty/Fashion": 21,
+      "Medical/Health": 7,
+      "Lifestyle/Home": 7,
+      "Fitness/Sports/Outdoors": 5
+    },
+    "top_partners": [
+      [
+        "Anupam",
+        36
+      ],
+      [
+        "Aman",
+        32
+      ],
+      [
+        "Namita",
+        29
+      ]
+    ],
+    "deal_success_rate": 1.0,
+    "avg_startup_revenue": 977.978021978022,
+    "avg_startup_valuation": 5721.1782601868135,
+    "community": 0
+  },
+  "Ritesh": {
+    "name": "Ritesh",
+    "total_deals": 53,
+    "total_invested": 2248.4844999999996,
+    "avg_deal_size": 42.42423584905659,
+    "avg_equity": 2.23661320754717,
+    "episodes_present": 146,
+    "investment_rate": 0.363013698630137,
+    "top_industries": {
+      "Food and Beverage": 10,
+      "Beauty/Fashion": 10,
+      "Technology/Software": 6,
+      "Business Services": 6,
+      "Medical/Health": 5
+    },
+    "top_partners": [
+      [
+        "Aman",
+        15
+      ],
+      [
+        "Namita",
+        14
+      ],
+      [
+        "Vineeta",
+        10
+      ]
+    ],
+    "deal_success_rate": 1.0,
+    "avg_startup_revenue": 921.7169811320755,
+    "avg_startup_valuation": 6808.728661288678,
+    "community": 0
+  },
+  "Amit": {
+    "name": "Amit",
+    "total_deals": 36,
+    "total_invested": 1284.4,
+    "avg_deal_size": 35.67777777777778,
+    "avg_equity": 4.195738888888888,
+    "episodes_present": 142,
+    "investment_rate": 0.2535211267605634,
+    "top_industries": {
+      "Food and Beverage": 10,
+      "Beauty/Fashion": 9,
+      "Medical/Health": 4,
+      "Technology/Software": 3,
+      "Lifestyle/Home": 2
+    },
+    "top_partners": [
+      [
+        "Namita",
+        12
+      ],
+      [
+        "Anupam",
+        10
+      ],
+      [
+        "Aman",
+        9
+      ]
+    ],
+    "deal_success_rate": 1.0,
+    "avg_startup_revenue": 990.2777777777778,
+    "avg_startup_valuation": 4290.138888888889,
+    "community": 0
+  }
+}

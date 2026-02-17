@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deal Decoder - Shark Tank India Intelligence Hub</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .nav-bar {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .nav-bar a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .nav-bar a:hover { color: #764ba2; }
+        .header {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        .header h1 { font-size: 2.5em; color: #333; margin-bottom: 10px; }
+        .header .emoji { font-size: 3em; margin-right: 15px; }
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        .structure-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .structure-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+        }
+        .structure-card.pure::before { background: linear-gradient(90deg, #28a745 0%, #20c997 100%); }
+        .structure-card.debt::before { background: linear-gradient(90deg, #ffc107 0%, #fd7e14 100%); }
+        .structure-card.royalty::before { background: linear-gradient(90deg, #17a2b8 0%, #6610f2 100%); }
+        .structure-card:hover { transform: translateY(-5px); }
+        .structure-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .structure-name {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .structure-count {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .structure-percent {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .structure-details {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .detail-row:last-child { border-bottom: none; }
+        .detail-label { color: #666; }
+        .detail-value { font-weight: 600; color: #333; }
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+        }
+        .card h2 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .recommendation-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        .recommendation-box h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .recommendation-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .recommendation-box li {
+            padding: 10px 0;
+            color: #555;
+            position: relative;
+            padding-left: 30px;
+        }
+        .recommendation-box li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .comparison-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .comparison-item h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .comparison-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .comparison-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 8px;
+        }
+        @media (max-width: 968px) {
+            .structure-grid { grid-template-columns: 1fr; }
+            .comparison-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <a href="index.html">← Back to Home</a>
+            <span style="color: #333; font-weight: 600;">📋 Deal Decoder</span>
+        </div>
+
+        <div class="header">
+            <h1><span class="emoji">📋</span>Deal Structure Decoder</h1>
+            <p>Analysis of 465 deals • 5 structure types • Debt, royalty & complex terms</p>
+        </div>
+
+        <div class="structure-grid">
+            <div class="structure-card pure">
+                <span class="structure-icon">💰</span>
+                <div class="structure-name">Pure Equity</div>
+                <div class="structure-count">336</div>
+                <div class="structure-percent">72.3% of all deals</div>
+                <div class="structure-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Avg Deal</span>
+                        <span class="detail-value">₹69.7L</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Avg Equity</span>
+                        <span class="detail-value">7.0%</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Preference</span>
+                        <span class="detail-value">Most Common</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="structure-card debt">
+                <span class="structure-icon">🏦</span>
+                <div class="structure-name">Debt + Equity</div>
+                <div class="structure-count">77</div>
+                <div class="structure-percent">16.6% of all deals</div>
+                <div class="structure-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Avg Debt</span>
+                        <span class="detail-value">₹56.7L</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Interest Rate</span>
+                        <span class="detail-value">8.1%</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Debt Ratio</span>
+                        <span class="detail-value">54.6%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="structure-card royalty">
+                <span class="structure-icon">👑</span>
+                <div class="structure-name">Royalty + Equity</div>
+                <div class="structure-count">39</div>
+                <div class="structure-percent">8.4% of all deals</div>
+                <div class="structure-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Avg Royalty</span>
+                        <span class="detail-value">1.61%</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Recoupment</span>
+                        <span class="detail-value">₹119L</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Avg Equity</span>
+                        <span class="detail-value">4.18%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="structure-card">
+                <span class="structure-icon">🎓</span>
+                <div class="structure-name">Advisory Shares</div>
+                <div class="structure-count">10</div>
+                <div class="structure-percent">2.2% of all deals</div>
+                <div class="structure-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Type</span>
+                        <span class="detail-value">Strategic</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Top User</span>
+                        <span class="detail-value">Peyush (5)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Rarity</span>
+                        <span class="detail-value">Very Rare</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="structure-card">
+                <span class="structure-icon">🔀</span>
+                <div class="structure-name">Complex (Debt+Royalty)</div>
+                <div class="structure-count">3</div>
+                <div class="structure-percent">0.6% of all deals</div>
+                <div class="structure-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Type</span>
+                        <span class="detail-value">Hybrid</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Use Case</span>
+                        <span class="detail-value">High Risk</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Frequency</span>
+                        <span class="detail-value">Extremely Rare</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💡 When Each Structure is Used</h2>
+            
+            <div class="recommendation-box" style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);">
+                <h3>💰 Pure Equity (72.3%)</h3>
+                <ul>
+                    <li>Early stage startups (revenue <₹100L)</li>
+                    <li>High-growth industries (Tech, Medical)</li>
+                    <li>Cash burn phase requiring capital</li>
+                    <li>Simplicity preferred by both sides</li>
+                    <li>Standard 5-8% equity for ₹50-100L</li>
+                </ul>
+            </div>
+
+            <div class="recommendation-box" style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); margin-top: 20px;">
+                <h3>🏦 Debt + Equity (16.6%)</h3>
+                <ul>
+                    <li>Revenue >₹200L with positive cash flow</li>
+                    <li>Asset-heavy industries (Manufacturing, F&B)</li>
+                    <li>Lower margins (<50%) suggest debt over dilution</li>
+                    <li>Debt typically 54.6% of total deal value</li>
+                    <li>Average interest rate: 8.1%</li>
+                </ul>
+            </div>
+
+            <div class="recommendation-box" style="background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%); margin-top: 20px;">
+                <h3>👑 Royalty + Equity (8.4%)</h3>
+                <ul>
+                    <li>High gross margin (>60%) B2C businesses</li>
+                    <li>Moderate-to-high revenue (₹300-1000L)</li>
+                    <li>Industries: Beauty/Fashion, Food & Beverage</li>
+                    <li>Typical: 1-2% royalty until ₹100-125L recoupment</li>
+                    <li>Lower equity dilution (4.18% vs 7%)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📊 Structure Comparison</h2>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h4>Pure Equity</h4>
+                    <div class="comparison-value">₹69.7L</div>
+                    <div class="comparison-label">Avg Deal Amount</div>
+                    <div style="margin-top: 15px;">
+                        <div class="comparison-value" style="font-size: 1.5em;">7.0%</div>
+                        <div class="comparison-label">Avg Equity</div>
+                    </div>
+                </div>
+                <div class="comparison-item">
+                    <h4>Debt + Equity</h4>
+                    <div class="comparison-value">₹44.9L</div>
+                    <div class="comparison-label">Avg Equity Portion</div>
+                    <div style="margin-top: 15px;">
+                        <div class="comparison-value" style="font-size: 1.5em;">₹56.7L</div>
+                        <div class="comparison-label">Avg Debt Amount</div>
+                    </div>
+                </div>
+                <div class="comparison-item">
+                    <h4>Royalty + Equity</h4>
+                    <div class="comparison-value">₹98.2L</div>
+                    <div class="comparison-label">Avg Deal Amount</div>
+                    <div style="margin-top: 15px;">
+                        <div class="comparison-value" style="font-size: 1.5em;">4.18%</div>
+                        <div class="comparison-label">Avg Equity</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🦈 Shark Preferences</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                <div style="padding: 20px; background: #f8f9fa; border-radius: 12px;">
+                    <h4 style="color: #333; margin-bottom: 12px;">Debt Deals</h4>
+                    <p style="color: #666; font-size: 0.95em;">All sharks use debt equally (80 deals each). This is structural rather than preference-based.</p>
+                </div>
+                <div style="padding: 20px; background: #f8f9fa; border-radius: 12px;">
+                    <h4 style="color: #333; margin-bottom: 12px;">Royalty Deals</h4>
+                    <p style="color: #666; font-size: 0.95em;"><strong>Namita (17)</strong> and <strong>Vineeta (15)</strong> prefer royalty structures most.</p>
+                </div>
+                <div style="padding: 20px; background: #f8f9fa; border-radius: 12px;">
+                    <h4 style="color: #333; margin-bottom: 12px;">Advisory Shares</h4>
+                    <p style="color: #666; font-size: 0.95em;"><strong>Peyush (5)</strong> and <strong>Vineeta (4)</strong> use advisory shares for strategic partnerships.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Key Insights</h2>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 20px;">
+                <div style="padding: 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 12px;">
+                    <h4 style="color: #333; margin-bottom: 12px;">💡 Simplicity Preferred</h4>
+                    <p style="color: #555; line-height: 1.6;">72.3% of deals are pure equity. Both founders and sharks prefer straightforward structures for faster execution and clearer terms.</p>
+                </div>
+                <div style="padding: 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 12px;">
+                    <h4 style="color: #333; margin-bottom: 12px;">🏦 Debt for Stability</h4>
+                    <p style="color: #555; line-height: 1.6;">Debt used for stable, asset-heavy businesses with revenue >₹200L. Average debt-to-total ratio: 54.6% at 8.1% interest.</p>
+                </div>
+                <div style="padding: 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 12px;">
+                    <h4 style="color: #333; margin-bottom: 12px;">👑 Royalty for High Margins</h4>
+                    <p style="color: #555; line-height: 1.6;">Royalty structures work for high-margin (>60%) B2C businesses. Typical: 1-2% until ₹100-125L recoupment with lower equity dilution.</p>
+                </div>
+                <div style="padding: 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 12px;">
+                    <h4 style="color: #333; margin-bottom: 12px;">📈 Complex Terms Rare</h4>
+                    <p style="color: #555; line-height: 1.6;">Only 0.6% use debt+royalty+equity. Reserved for high-revenue, high-risk situations where sharks want maximum downside protection.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

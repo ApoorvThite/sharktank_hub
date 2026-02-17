@@ -1,0 +1,62 @@
+{
+  "Maharashtra": {
+    "pitches": 163,
+    "success_rate": 65.6441717791411,
+    "avg_deal": 57.57290663551402,
+    "market_share": 23.219373219373217
+  },
+  "Delhi": {
+    "pitches": 94,
+    "success_rate": 65.95744680851064,
+    "avg_deal": 68.70967741935483,
+    "market_share": 13.390313390313391
+  },
+  "Karnataka": {
+    "pitches": 70,
+    "success_rate": 65.71428571428571,
+    "avg_deal": 65.41304347826087,
+    "market_share": 9.971509971509972
+  },
+  "Gujarat": {
+    "pitches": 57,
+    "success_rate": 73.68421052631578,
+    "avg_deal": 50.976190476190474,
+    "market_share": 8.11965811965812
+  },
+  "Haryana": {
+    "pitches": 46,
+    "success_rate": 69.56521739130434,
+    "avg_deal": 88.156640625,
+    "market_share": 6.552706552706552
+  },
+  "Uttar Pradesh": {
+    "pitches": 34,
+    "success_rate": 64.70588235294117,
+    "avg_deal": 54.0,
+    "market_share": 4.843304843304843
+  },
+  "Rajasthan": {
+    "pitches": 32,
+    "success_rate": 59.375,
+    "avg_deal": 55.78947368421053,
+    "market_share": 4.5584045584045585
+  },
+  "Telangana": {
+    "pitches": 22,
+    "success_rate": 72.72727272727273,
+    "avg_deal": 74.562503125,
+    "market_share": 3.133903133903134
+  },
+  "West Bengal": {
+    "pitches": 18,
+    "success_rate": 61.111111111111114,
+    "avg_deal": 76.36363636363636,
+    "market_share": 2.564102564102564
+  },
+  "Punjab": {
+    "pitches": 17,
+    "success_rate": 41.17647058823529,
+    "avg_deal": 79.28571428571429,
+    "market_share": 2.4216524216524213
+  }
+}

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shark Tank India - Industry Intelligence Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            background: #f8f9fa;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        
+        .stat-card h3 {
+            color: #667eea;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .stat-card .value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card .label {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .section {
+            padding: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .industry-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s;
+        }
+        
+        .industry-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        .industry-card h3 {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        
+        .industry-card .metric {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .industry-card .metric:last-child {
+            border-bottom: none;
+        }
+        
+        .metric-label {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .metric-value {
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .success-high {
+            color: #28a745;
+        }
+        
+        .success-medium {
+            color: #ffc107;
+        }
+        
+        .success-low {
+            color: #dc3545;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin: 2px;
+        }
+        
+        .badge-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .badge-warning {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .badge-info {
+            background: #17a2b8;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏭 Industry Intelligence Dashboard</h1>
+            <p>Shark Tank India - Comprehensive Industry Analysis</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Industries</h3>
+                <div class="value">17</div>
+                <div class="label">Analyzed</div>
+            </div>
+            <div class="stat-card">
+                <h3>Total Startups</h3>
+                <div class="value">702</div>
+                <div class="label">Across 3 Seasons</div>
+            </div>
+            <div class="stat-card">
+                <h3>Success Rate</h3>
+                <div class="value">66.2%</div>
+                <div class="label">Overall Offer Rate</div>
+            </div>
+            <div class="stat-card">
+                <h3>Avg Deal Size</h3>
+                <div class="value">₹38L</div>
+                <div class="label">Per Investment</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Top Industries by Success Rate</h2>
+            <div class="industry-grid">
+                <div class="industry-card">
+                    <h3>🏃 Fitness/Sports/Outdoors</h3>
+                    <div class="metric">
+                        <span class="metric-label">Success Rate</span>
+                        <span class="metric-value success-high">80.0%</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Avg Deal</span>
+                        <span class="metric-value">₹70L</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Pitches</span>
+                        <span class="metric-value">20</span>
+                    </div>
+                </div>
+                
+                <div class="industry-card">
+                    <h3>🏥 Medical/Health</h3>
+                    <div class="metric">
+                        <span class="metric-label">Success Rate</span>
+                        <span class="metric-value success-high">75.0%</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Avg Deal</span>
+                        <span class="metric-value">₹37L</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Revenue Multiple</span>
+                        <span class="metric-value">36.0x</span>
+                    </div>
+                </div>
+                
+                <div class="industry-card">
+                    <h3>💻 Technology/Software</h3>
+                    <div class="metric">
+                        <span class="metric-label">Success Rate</span>
+                        <span class="metric-value success-high">71.6%</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Avg Deal</span>
+                        <span class="metric-value">₹25L</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Revenue Multiple</span>
+                        <span class="metric-value">29.2x</span>
+                    </div>
+                </div>
+                
+                <div class="industry-card">
+                    <h3>🍔 Food and Beverage</h3>
+                    <div class="metric">
+                        <span class="metric-label">Success Rate</span>
+                        <span class="metric-value success-high">70.1%</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Market Share</span>
+                        <span class="metric-value">21.9%</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Pitches</span>
+                        <span class="metric-value">154</span>
+                    </div>
+                </div>
+                
+                <div class="industry-card">
+                    <h3>👶 Children/Education</h3>
+                    <div class="metric">
+                        <span class="metric-label">Success Rate</span>
+                        <span class="metric-value success-medium">69.0%</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Avg Deal</span>
+                        <span class="metric-value">₹49L</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Pitches</span>
+                        <span class="metric-value">29</span>
+                    </div>
+                </div>
+                
+                <div class="industry-card">
+                    <h3>💄 Beauty/Fashion</h3>
+                    <div class="metric">
+                        <span class="metric-label">Success Rate</span>
+                        <span class="metric-value success-medium">68.1%</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Market Share</span>
+                        <span class="metric-value">20.1%</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Pitches</span>
+                        <span class="metric-value">141</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📊 Industry Entry Requirements</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Industry</th>
+                        <th>Min Revenue</th>
+                        <th>Min Gross Margin</th>
+                        <th>Typical Ask Range</th>
+                        <th>Success Boosters</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Food and Beverage</strong></td>
+                        <td>₹180L</td>
+                        <td>50.5%</td>
+                        <td>₹50L - ₹90L</td>
+                        <td><span class="badge badge-info">Female Founder</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Beauty/Fashion</strong></td>
+                        <td>₹380L</td>
+                        <td>63.0%</td>
+                        <td>₹50L - ₹100L</td>
+                        <td><span class="badge badge-info">Female Founder</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Technology/Software</strong></td>
+                        <td>₹120L</td>
+                        <td>50.0%</td>
+                        <td>₹50L - ₹100L</td>
+                        <td><span class="badge badge-warning">None</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medical/Health</strong></td>
+                        <td>₹110L</td>
+                        <td>68.0%</td>
+                        <td>₹52L - ₹100L</td>
+                        <td>
+                            <span class="badge badge-success">Patent</span>
+                            <span class="badge badge-info">Female Founder</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Manufacturing</strong></td>
+                        <td>₹242L</td>
+                        <td>50.0%</td>
+                        <td>₹50L - ₹75L</td>
+                        <td><span class="badge badge-info">Female Founder</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lifestyle/Home</strong></td>
+                        <td>₹330L</td>
+                        <td>65.0%</td>
+                        <td>₹50L - ₹100L</td>
+                        <td><span class="badge badge-info">Female Founder</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section" style="background: #f8f9fa;">
+            <h2>💡 Key Insights</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                <div style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid #28a745;">
+                    <h3 style="color: #28a745; margin-bottom: 10px;">🎯 Most Competitive</h3>
+                    <p><strong>Fitness/Sports/Outdoors</strong> leads with 80% success rate</p>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid #667eea;">
+                    <h3 style="color: #667eea; margin-bottom: 10px;">📈 Highest Multiples</h3>
+                    <p><strong>Medical/Health</strong> commands 36x revenue multiples</p>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid #ffc107;">
+                    <h3 style="color: #ffc107; margin-bottom: 10px;">🏆 Largest Market</h3>
+                    <p><strong>Food & Beverage</strong> represents 21.9% of all pitches</p>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid #17a2b8;">
+                    <h3 style="color: #17a2b8; margin-bottom: 10px;">👩 Female Advantage</h3>
+                    <p>Female founders boost success in 6 out of 10 top industries</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Shark Tank India Intelligence Hub</strong></p>
+            <p>Phase 7: Industry Deep Dive Dashboard | Generated February 2026</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Based on analysis of 702 startups across 3 seasons</p>
+        </div>
+    </div>
+</body>
+</html>

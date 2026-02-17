@@ -1,0 +1,31 @@
+{
+  "total_startups": 702,
+  "success_rate": 66.23931623931624,
+  "avg_deal": 68.479384,
+  "industries": 18,
+  "top_industries": {
+    "Food and Beverage": 154,
+    "Beauty/Fashion": 141,
+    "Technology/Software": 67,
+    "Medical/Health": 64,
+    "Manufacturing": 52
+  },
+  "sharks": [
+    "Namita",
+    "Aman",
+    "Anupam",
+    "Peyush",
+    "Vineeta",
+    "Ritesh",
+    "Amit"
+  ],
+  "shark_success_rates": {
+    "Namita": 121,
+    "Aman": 143,
+    "Anupam": 108,
+    "Peyush": 103,
+    "Vineeta": 91,
+    "Ritesh": 53,
+    "Amit": 36
+  }
+}

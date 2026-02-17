@@ -1,0 +1,52 @@
+{
+  "Food and Beverage": {
+    "median": 11.11111111111111,
+    "mean": 18.76672624500886,
+    "count": 102
+  },
+  "Beauty/Fashion": {
+    "median": 8.350767085076708,
+    "mean": 14.923053610334224,
+    "count": 94
+  },
+  "Technology/Software": {
+    "median": 27.916666666666668,
+    "mean": 38.98791104582728,
+    "count": 44
+  },
+  "Medical/Health": {
+    "median": 36.36363636363637,
+    "mean": 38.81023703143491,
+    "count": 43
+  },
+  "Manufacturing": {
+    "median": 8.333333333333334,
+    "mean": 16.073837399957785,
+    "count": 31
+  },
+  "Lifestyle/Home": {
+    "median": 11.666666666071428,
+    "mean": 13.913246452406613,
+    "count": 26
+  },
+  "Business Services": {
+    "median": 13.137254901960784,
+    "mean": 23.358608273549137,
+    "count": 21
+  },
+  "Children/Education": {
+    "median": 7.874015748031496,
+    "mean": 15.888814568886705,
+    "count": 19
+  },
+  "Vehicles/Electrical Vehicles": {
+    "median": 37.40725806451613,
+    "mean": 37.40725806451613,
+    "count": 2
+  },
+  "Fitness/Sports/Outdoors": {
+    "median": 7.407407407407407,
+    "mean": 10.526848005426073,
+    "count": 15
+  }
+}
