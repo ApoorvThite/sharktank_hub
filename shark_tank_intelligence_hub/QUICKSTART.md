@@ -1,132 +1,212 @@
-# 🚀 Quick Start Guide
+# 🚀 Quick Start Guide — Shark Tank India Intelligence Hub
 
-## Shark Tank India Intelligence Hub
+> **Status:** ✅ Production Ready | All 9 phases complete
 
-### Step 1: Setup Environment
+---
+
+## 1. Environment Setup
 
 ```bash
-# Navigate to project directory
-cd shark_tank_intelligence_hub
+# Clone and enter the project
+git clone https://github.com/your-username/sharktank-intelligence-hub.git
+cd sharktank-intelligence-hub/shark_tank_intelligence_hub
 
-# Create virtual environment
+# Create and activate a virtual environment
 python -m venv venv
+source venv/bin/activate        # macOS / Linux
+# venv\Scripts\activate         # Windows
 
-# Activate virtual environment
-# On macOS/Linux:
-source venv/bin/activate
-# On Windows:
-# venv\Scripts\activate
-
-# Install dependencies
+# Install all dependencies
 pip install -r requirements.txt
 ```
 
-### Step 2: Prepare Data
+---
 
-1. Place your `shark_tank_india.csv` file in `data/raw/` directory
-2. The dataset should contain 702 rows with columns for:
-   - Startup details (name, industry, location)
-   - Financial metrics (revenue, profit, asked amount, equity)
-   - Shark decisions (individual shark columns)
-   - Deal outcomes (accepted, amount invested, equity taken)
+## 2. Add Your Dataset
 
-### Step 3: Run Analysis Notebooks
+Place the raw CSV in the expected location:
 
-Open Jupyter and run notebooks in order:
+```
+data/raw/shark_tank_india.csv
+```
+
+The dataset should have **702 rows × 80 columns** covering:
+- Startup details (name, industry, state/city)
+- Financial metrics (revenue, profit, asked amount, equity %)
+- Per-shark investment columns (0/1 flags)
+- Deal outcomes (offer received, accepted, final terms)
+
+---
+
+## 3. Launch the Dashboard
+
+```bash
+streamlit run dashboard/app.py
+```
+
+Opens at **http://localhost:8501**
+
+Navigate the sidebar to access all 6 modules:
+
+| Page | What it does |
+|---|---|
+| 🎯 Shark Predictor | Input startup details → get per-shark probability scores |
+| 💰 Valuation Check | Compare your ask against industry benchmarks |
+| 🤝 Shark Networks | Explore co-investment partnerships and influence scores |
+| 🏭 Industry Intel | Sector-specific success rates and entry requirements |
+| 📋 Deal Decoder | Analyse debt/royalty structures + live cost calculator |
+| 🗺️ Geo Insights | State and region investment pattern maps |
+
+---
+
+## 4. Use Production Tools Directly
+
+All tools work standalone — no dashboard required.
+
+### Predict deal outcome
+```python
+from predict_startup_final import SharkTankPredictorFinal
+
+predictor = SharkTankPredictorFinal()
+predictor.explain_prediction(startup_features_df, "My Startup")
+# Prints: offer probability, shark recommendations, confidence level
+```
+
+### Calculate fair valuation
+```python
+from valuation_calculator import ValuationCalculator
+
+calc = ValuationCalculator()
+calc.calculate_recommended_valuation(
+    industry='Technology/Software',
+    yearly_revenue=450,    # ₹ Lakhs
+    gross_margin=75,
+    has_patent=True,
+    team_quality=8
+)
+```
+
+### Get shark recommendations
+```python
+from shark_recommender import SharkRecommender
+
+recommender = SharkRecommender()
+recs = recommender.recommend_sharks({
+    'industry': 'Medical/Health',
+    'founder_gender': 'female',
+    'revenue': 200,
+    'stage': 'early'
+}, top_n=5)
+print(recommender.explain_recommendation(recs[0], startup_profile))
+```
+
+### Get deal structure advice
+```python
+from deal_recommendations import DealStructureRecommender
+
+advisor = DealStructureRecommender()
+rec = advisor.recommend_deal_structure({
+    'yearly_revenue': 450,
+    'gross_margin': 52,
+    'cash_burn': False,
+    'industry': 'Food and Beverage'
+})
+print(advisor.explain_recommendation(rec, startup_profile))
+```
+
+---
+
+## 5. Run Analysis Notebooks
 
 ```bash
 jupyter notebook
 ```
 
-**Recommended sequence:**
-1. `01_eda_comprehensive.ipynb` - Understand the data
-2. `02_feature_engineering.ipynb` - Create features
-3. `03_shark_predictor.ipynb` - Build ML model
-4. `04_valuation_analysis.ipynb` - Analyze valuations
-5. `05_network_analysis.ipynb` - Shark networks
-6. `06_industry_intelligence.ipynb` - Industry insights
-7. `07_deal_structure.ipynb` - Deal analysis
-8. `08_geographic_analysis.ipynb` - Geographic patterns
+Open notebooks in sequence from the `notebooks/` directory:
 
-### Step 4: Launch Dashboard
-
-```bash
-# From project root
-streamlit run dashboard/app.py
-```
-
-The dashboard will open at `http://localhost:8501`
-
-### Step 5: Explore Modules
-
-Navigate through the dashboard pages:
-
-- **🎯 Shark Predictor** - Predict which sharks will invest
-- **💰 Valuation Check** - Benchmark your valuation
-- **🤝 Shark Networks** - Explore partnerships
-- **🏭 Industry Intel** - Industry-specific insights
-- **📋 Deal Decoder** - Analyze deal structures
-- **🗺️ Geo Insights** - Geographic patterns
+| Notebook | Module |
+|---|---|
+| `01_eda_comprehensive.ipynb` | Exploratory Data Analysis |
+| `02_feature_engineering.ipynb` | Feature Engineering |
+| `03_shark_predictor.ipynb` | ML Model Training |
+| `04_valuation_analysis.ipynb` | Valuation Benchmarking |
+| `05_network_analysis.ipynb` | Shark Network Analysis |
+| `06_industry_intelligence.ipynb` | Industry Intelligence |
+| `07_deal_structure.ipynb` | Deal Structure Decoder |
+| `08_geographic_analysis.ipynb` | Geographic Mapping |
 
 ---
 
-## 📊 Phase 1: Next Steps
+## 6. Use the Core Library
 
-Once the structure is ready, Phase 1 will involve:
+```python
+from src.data.loader import DataLoader
+from src.data.cleaner import DataCleaner
+from src.data.feature_engineer import FeatureEngineer
+from src.analysis.network_analyzer import NetworkAnalyzer
+from src.analysis.industry_profiler import IndustryProfiler
 
-1. **Data Collection & Cleaning**
-   - Obtain the actual Shark Tank India dataset
-   - Clean and validate data
-   - Handle missing values
+# Load and clean data
+loader = DataLoader()
+df_raw = loader.load_raw_data()
 
-2. **Exploratory Data Analysis**
-   - Complete `01_eda_comprehensive.ipynb`
-   - Generate visualizations
-   - Document key findings
+cleaner = DataCleaner()
+df_clean = cleaner.clean_dataset(df_raw)
+print(cleaner.get_cleaning_report())
 
-3. **Feature Engineering**
-   - Complete `02_feature_engineering.ipynb`
-   - Create all 35+ features
-   - Save processed data
+# Engineer features
+engineer = FeatureEngineer()
+df_features = engineer.create_features(df_clean)
 
-4. **Model Development**
-   - Train shark predictor model
-   - Optimize hyperparameters
-   - Validate performance
+# Analyse shark network
+analyzer = NetworkAnalyzer()
+graph = analyzer.build_shark_network(df_features, shark_columns=[...])
+print(analyzer.get_network_statistics())
+print(analyzer.get_shark_influence_score())
+```
 
 ---
 
-## 🛠️ Troubleshooting
+## 7. Troubleshooting
 
-### Common Issues
-
-**Issue**: Module import errors
+**Module import errors**
 ```bash
-# Solution: Add project to Python path
-export PYTHONPATH="${PYTHONPATH}:/path/to/shark_tank_intelligence_hub"
+export PYTHONPATH="${PYTHONPATH}:$(pwd)"
 ```
 
-**Issue**: Missing dependencies
+**Missing model files** — ensure these exist before running predictions:
+```
+models/tuned/best_model_final.pkl
+models/tuned/scaler.pkl
+models/clean/shark_multilabel_models_clean.pkl
+models/clean/shark_multilabel_scaler.pkl
+models/deal_structure_predictor.pkl
+```
+
+**Dependency conflicts**
 ```bash
-# Solution: Reinstall requirements
 pip install -r requirements.txt --upgrade
 ```
 
-**Issue**: Streamlit not found
+**Streamlit port already in use**
 ```bash
-# Solution: Install streamlit explicitly
-pip install streamlit==1.27.0
+streamlit run dashboard/app.py --server.port 8502
 ```
 
 ---
 
-## 📞 Support
+## 8. Enable Logging
 
-For issues or questions:
-- Check the main `README.md`
-- Review notebook documentation
-- Check `config.yaml` for configuration options
+Add this to any script to see detailed logs from all modules:
+
+```python
+import logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s | %(name)s | %(levelname)s | %(message)s'
+)
+```
 
 ---
 
-**Ready to analyze Shark Tank India data! 🦈📊**
+*Shark Tank India Intelligence Hub — February 2026*

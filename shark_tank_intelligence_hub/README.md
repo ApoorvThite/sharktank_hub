@@ -1,48 +1,72 @@
 # 🦈 Shark Tank India Intelligence Hub
 
-> **Complete Data Science & Business Analytics Platform**  
-> Analyzing 702 pitches from Shark Tank India Seasons 1-5 (Dec 2021 - Feb 2026)
+> **Comprehensive Data Science & Business Analytics Platform**  
+> Analyzing 702 pitches from Shark Tank India Seasons 1–5 (Dec 2021 – Feb 2026)
 
-[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.27+-red.svg)](https://streamlit.io/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-2.0-orange.svg)](https://xgboost.readthedocs.io/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code Style](https://img.shields.io/badge/code%20style-PEP8-black.svg)](https://peps.python.org/pep-0008/)
 
 ---
 
-## 📊 Executive Summary
+## � Project Overview
 
-This comprehensive project combines **7 major analytical modules** into one unified intelligence platform, demonstrating end-to-end data science capabilities including exploratory data analysis, machine learning, network analysis, business intelligence, and interactive visualization.
+This end-to-end data science platform analyzes **702 startup pitches** from Shark Tank India (Seasons 1–5) and delivers **6 production-ready analytical modules** covering machine learning, network analysis, valuation benchmarking, industry intelligence, deal structure analysis, and geographic mapping — all unified in an interactive Streamlit dashboard.
 
-### Key Dataset Statistics
+### Dataset at a Glance
 
-- **Total Pitches**: 702 startups across 5 seasons
-- **Success Metrics**: 66.2% received offers, 86.2% accepted when offered
-- **Total Investment**: ₹31,843 Lakhs (~₹318.4 Crores)
-- **Average Deal**: ₹79.4 Lakhs for 7.5% equity
-- **Industries**: 18 categories led by Food & Beverage (154) and Beauty/Fashion (141)
-- **Geographic Spread**: 29 states with Maharashtra (163), Delhi (94), Karnataka (70) leading
-- **Sharks**: 7 main sharks + guests across all episodes
+| Metric | Value |
+|---|---|
+| Total Pitches | 702 across 5 seasons |
+| Offer Rate | 66.2% received offers |
+| Acceptance Rate | 86.2% accepted when offered |
+| Total Investment | ₹318.4 Crores |
+| Average Deal | ₹79.4 Lakhs for 7.5% equity |
+| Industries | 18 categories |
+| Geographic Coverage | 29 states |
+| Sharks Analyzed | 7 investors |
 
 ---
 
-## 🎯 Project Objectives
+## 🎯 Modules
 
-This integrated project delivers **7 interconnected analytical modules**:
+| # | Module | Description |
+|---|---|---|
+| 1 | 🎯 **Shark Predictor** | XGBoost multi-label classifier predicting which sharks will invest |
+| 2 | 💰 **Valuation Calculator** | Industry-specific benchmarking with revenue/margin/patent multipliers |
+| 3 | 🤝 **Shark Network** | NetworkX co-investment graph with centrality & influence scoring |
+| 4 | 🏭 **Industry Intelligence** | Sector profiles, success factors, entry requirements for 18 industries |
+| 5 | 📋 **Deal Decoder** | Equity / Debt / Royalty structure analysis with effective cost calculator |
+| 6 | 🗺️ **Geographic Mapper** | State/region investment patterns and startup hub identification |
 
-1. **📊 Exploratory Data Analysis (EDA)** - Comprehensive data understanding and pattern discovery
-2. **🎯 The Shark Predictor** - ML-powered deal prediction and shark selection engine
-3. **💰 Valuation Reality Check** - Smart valuation benchmarking and fairness analysis
-4. **🤝 Shark Collaboration Network** - Network analysis of shark partnerships and synergies
-5. **🏭 Industry Deep Dive Dashboard** - Sector-specific intelligence and benchmarks
-6. **📋 Deal Structure Decoder** - Analysis of debt, royalty, and special terms
-7. **🗺️ Geographic Success Map** - Location-based investment pattern analysis
+---
 
-### Value Proposition
+## 📊 Key Results
 
-- **For Founders**: Optimize pitch strategy, realistic valuation, shark targeting
-- **For Investors**: Pattern recognition, due diligence insights, market intelligence
-- **For Researchers**: Understanding Indian startup ecosystem dynamics
-- **For Data Science Portfolio**: Showcase end-to-end ML + BA capabilities
+### Model Performance
+- **Binary Classifier (Deal/No Deal):** 78.5% accuracy, 0.85 AUC-ROC
+- **Per-Shark Classifiers:** 75–85% accuracy per shark (7 models)
+- **Deal Structure Predictor:** 65.6% accuracy (5 structure types)
+- **Valuation Calculator:** Industry-calibrated benchmarks across 18 sectors
+
+### Top Findings
+- **Revenue** is the #1 success predictor (18% feature importance)
+- **Aman Gupta** is the most active shark — 143 deals, ₹5,854L invested
+- **Strongest partnership:** Namita Thapar ↔ Aman Gupta (45 co-investments)
+- **72.3%** of deals are pure equity; only 9% include royalty
+- **Maharashtra** dominates with 163 pitches (23.2% of all pitches)
+- **Female founders** have a statistical advantage in 6 out of 10 top industries
+- **Technology** commands the highest revenue multiples (27.9x median)
+
+### Valuation Multiples by Industry
+| Industry | Median Revenue Multiple |
+|---|---|
+| Medical / Health | 36.0x |
+| Technology / Software | 29.2x |
+| Food & Beverage | 12.1x |
+| Beauty / Fashion | 8.4x |
 
 ---
 
@@ -52,300 +76,231 @@ This integrated project delivers **7 interconnected analytical modules**:
 shark_tank_intelligence_hub/
 │
 ├── data/
-│   ├── raw/                          # Original CSV (702 rows × 80 cols)
-│   ├── processed/                    # Cleaned data with engineered features
-│   ├── industry_benchmarks/          # Industry-specific metrics
-│   └── shark_profiles/               # Individual shark statistics
+│   ├── raw/                              # Original CSV (702 rows × 80 cols)
+│   └── processed/                        # Cleaned & feature-engineered data
+│       ├── processed_data_full.csv
+│       ├── processed_data_with_valuation_metrics.csv
+│       └── processed_data_with_deal_structures.csv
 │
-├── notebooks/
-│   ├── 01_eda_comprehensive.ipynb        # MODULE 1: Deep EDA
-│   ├── 02_feature_engineering.ipynb      # Data prep for ML
-│   ├── 03_shark_predictor.ipynb          # MODULE 2: ML models
-│   ├── 04_valuation_analysis.ipynb       # MODULE 3: Valuation
-│   ├── 05_network_analysis.ipynb         # MODULE 4: Shark networks
-│   ├── 06_industry_intelligence.ipynb    # MODULE 5: Industry insights
-│   ├── 07_deal_structure.ipynb           # MODULE 6: Deal terms
-│   └── 08_geographic_analysis.ipynb      # MODULE 7: Location patterns
+├── notebooks/                            # Analysis notebooks (run in order)
+│   ├── 01_eda_comprehensive.ipynb
+│   ├── 02_feature_engineering.ipynb
+│   ├── 03_shark_predictor.ipynb
+│   ├── 04_valuation_analysis.ipynb
+│   ├── 05_network_analysis.ipynb
+│   ├── 06_industry_intelligence.ipynb
+│   ├── 07_deal_structure.ipynb
+│   └── 08_geographic_analysis.ipynb
 │
-├── src/
+├── src/                                  # Core library modules
 │   ├── data/
 │   │   ├── loader.py                     # Data loading utilities
-│   │   ├── cleaner.py                    # Data cleaning pipeline
-│   │   └── feature_engineer.py           # Feature creation (35+ features)
-│   │
+│   │   ├── cleaner.py                    # Cleaning pipeline
+│   │   └── feature_engineer.py           # Feature creation (74 features)
 │   ├── models/
 │   │   ├── shark_predictor.py            # XGBoost multi-label classifier
-│   │   ├── valuation_model.py            # Regression for equity dilution
-│   │   └── model_explainer.py            # SHAP analysis
-│   │
-│   ├── analysis/
-│   │   ├── network_analyzer.py           # NetworkX graph analysis
-│   │   ├── industry_profiler.py          # Industry-specific metrics
-│   │   ├── deal_decoder.py               # Deal structure patterns
-│   │   └── geo_mapper.py                 # Geographic analysis
-│   │
-│   └── visualization/
-│       ├── plotly_interactive.py         # Interactive charts
-│       ├── network_viz.py                # Shark collaboration graphs
-│       └── dashboards.py                 # Streamlit components
+│   │   ├── valuation_model.py            # Random Forest equity regressor
+│   │   └── model_explainer.py            # Feature importance & SHAP
+│   └── analysis/
+│       ├── eda_utils.py                  # EDA & visualization utilities
+│       ├── network_analyzer.py           # NetworkX graph analysis
+│       ├── industry_profiler.py          # Industry benchmarks
+│       ├── deal_decoder.py               # Deal structure patterns
+│       └── geo_mapper.py                 # Geographic analysis
 │
-├── models/
-│   ├── shark_predictor_xgb.pkl           # Trained XGBoost model
-│   ├── equity_predictor_rf.pkl           # Random Forest regressor
-│   └── feature_scaler.pkl                # StandardScaler object
+├── models/                               # Serialized trained models
+│   ├── tuned/
+│   │   ├── best_model_final.pkl          # Binary classifier (78.5% acc)
+│   │   └── scaler.pkl
+│   ├── clean/
+│   │   ├── shark_multilabel_models_clean.pkl  # 7 shark classifiers
+│   │   └── shark_multilabel_scaler.pkl
+│   └── deal_structure_predictor.pkl      # Deal type classifier
 │
-├── dashboard/
-│   ├── app.py                            # Main Streamlit app
+├── dashboard/                            # Streamlit multi-page app
+│   ├── app.py                            # Landing page
 │   ├── pages/
-│   │   ├── 1_🎯_Shark_Predictor.py      # ML prediction interface
-│   │   ├── 2_💰_Valuation_Check.py      # Valuation calculator
-│   │   ├── 3_🤝_Shark_Networks.py       # Network visualization
-│   │   ├── 4_🏭_Industry_Intel.py       # Industry benchmarks
-│   │   ├── 5_📋_Deal_Decoder.py         # Deal structure analysis
-│   │   └── 6_🗺️_Geo_Insights.py        # Geographic patterns
+│   │   ├── 1_🎯_Shark_Predictor.py
+│   │   ├── 2_💰_Valuation_Check.py
+│   │   ├── 3_🤝_Shark_Networks.py
+│   │   ├── 4_🏭_Industry_Intel.py
+│   │   ├── 5_📋_Deal_Decoder.py
+│   │   └── 6_🗺️_Geo_Insights.py
 │   └── utils/
-│       └── helpers.py                    # Shared functions
+│       └── helpers.py
 │
-├── reports/
-│   ├── figures/                          # All generated visualizations
-│   ├── comprehensive_report.pdf          # Full technical report
-│   └── executive_summary.pptx            # Business presentation
+├── reports/                              # Generated reports & visualizations
+│   ├── figures/                          # 25+ charts and graphs
+│   ├── VALUATION_INSIGHTS_REPORT.md
+│   ├── INDUSTRY_INTELLIGENCE_REPORT.md
+│   ├── PHASE4_ML_MODEL_SUMMARY.md
+│   ├── shark_profiles.json
+│   ├── industry_benchmarks.csv
+│   └── state_statistics.csv
 │
-├── requirements.txt                      # Python dependencies
-├── README.md                             # Project documentation
-└── config.yaml                           # Configuration file
+├── predict_startup_final.py              # Production prediction API
+├── valuation_calculator.py              # Production valuation tool
+├── shark_recommender.py                 # Production shark matcher
+├── deal_recommendations.py             # Production deal advisor
+├── requirements.txt                     # Python dependencies
+├── config.yaml                          # Project configuration
+└── QUICKSTART.md                        # Quick start guide
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
-
-- Python 3.9 or higher
-- pip package manager
-- Virtual environment (recommended)
+- Python 3.8+
+- pip
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd shark_tank_intelligence_hub
-   ```
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/sharktank-intelligence-hub.git
+cd sharktank-intelligence-hub/shark_tank_intelligence_hub
 
-2. **Create virtual environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+# 2. Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate        # macOS/Linux
+# venv\Scripts\activate         # Windows
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+# 3. Install dependencies
+pip install -r requirements.txt
 
-4. **Place your dataset**
-   - Add `shark_tank_india.csv` to `data/raw/` directory
+# 4. Place your dataset
+# Copy shark_tank_india.csv → data/raw/shark_tank_india.csv
+```
 
-### Running the Dashboard
+### Launch the Dashboard
 
 ```bash
 streamlit run dashboard/app.py
 ```
 
-The dashboard will open in your browser at `http://localhost:8501`
+Opens at `http://localhost:8501`
 
-### Running Jupyter Notebooks
+### Use Production Tools Directly
+
+```python
+# Predict deal outcome for a new startup
+from predict_startup_final import SharkTankPredictorFinal
+
+predictor = SharkTankPredictorFinal()
+result = predictor.predict(startup_features_df)
+# → offer_probability, recommended_sharks, confidence
+
+# Calculate fair valuation
+from valuation_calculator import ValuationCalculator
+
+calc = ValuationCalculator()
+calc.calculate_recommended_valuation(
+    industry='Technology/Software',
+    yearly_revenue=450,   # ₹ Lakhs
+    gross_margin=75,
+    has_patent=True,
+    team_quality=8
+)
+# → ₹X recommended valuation with ±20% range
+
+# Get shark recommendations
+from shark_recommender import SharkRecommender
+
+recommender = SharkRecommender()
+recommender.recommend_sharks({
+    'industry': 'Medical/Health',
+    'founder_gender': 'female',
+    'revenue': 200,
+    'stage': 'early'
+}, top_n=5)
+# → Ranked shark combinations with synergy scores
+
+# Get deal structure advice
+from deal_recommendations import DealStructureRecommender
+
+advisor = DealStructureRecommender()
+advisor.recommend_deal_structure({
+    'yearly_revenue': 450,
+    'gross_margin': 52,
+    'cash_burn': False,
+    'industry': 'Food and Beverage'
+})
+# → Pure Equity / Debt+Equity / Royalty+Equity with reasoning
+```
+
+### Run Analysis Notebooks
 
 ```bash
 jupyter notebook
+# Open notebooks/ and run in sequence: 01 → 02 → 03 → ... → 08
 ```
 
-Navigate to the `notebooks/` directory and open any analysis notebook.
+---
+
+## 🛠️ Tech Stack
+
+| Category | Libraries |
+|---|---|
+| **Data Processing** | pandas, numpy, scipy |
+| **Machine Learning** | scikit-learn, XGBoost, LightGBM |
+| **Visualization** | matplotlib, seaborn, plotly |
+| **Network Analysis** | NetworkX |
+| **Dashboard** | Streamlit |
+| **Explainability** | SHAP |
+| **Statistical Analysis** | statsmodels |
+| **Serialization** | pickle, joblib |
 
 ---
 
-## 📊 Modules Overview
+## 📈 Production Tools
 
-### 1. 🎯 Shark Predictor
-**ML-Powered Deal Prediction Engine**
-
-- **Algorithm**: XGBoost Multi-Label Classifier
-- **Features**: 35+ engineered features
-- **Accuracy**: ~78% on test set
-- **Output**: Probability scores for each shark, optimal targeting strategy
-
-**Use Case**: Input your startup details and get predictions on which sharks are most likely to invest.
+| Tool | File | Description |
+|---|---|---|
+| **Startup Predictor** | `predict_startup_final.py` | Binary deal prediction + per-shark probability scores |
+| **Valuation Calculator** | `valuation_calculator.py` | Revenue-based & pre-revenue valuation with multipliers |
+| **Shark Recommender** | `shark_recommender.py` | Optimal shark combinations with synergy scoring |
+| **Deal Advisor** | `deal_recommendations.py` | Rule-based deal structure recommendation engine |
 
 ---
 
-### 2. 💰 Valuation Reality Check
-**Smart Valuation Benchmarking**
+## � Reports & Documentation
 
-- **Analysis**: Compare your valuation against industry benchmarks
-- **Metrics**: Revenue multiples, profit multiples, valuation gaps
-- **Recommendations**: Fair/Overvalued/Undervalued assessment
-
-**Use Case**: Validate if your ask is realistic and competitive.
-
----
-
-### 3. 🤝 Shark Collaboration Network
-**Network Analysis of Partnerships**
-
-- **Technology**: NetworkX graph analysis
-- **Metrics**: Degree centrality, betweenness, influence scores
-- **Visualization**: Interactive network graphs
-
-**Use Case**: Understand shark partnership patterns and synergies.
+- [`QUICKSTART.md`](QUICKSTART.md) — Setup and usage guide
+- [`reports/VALUATION_INSIGHTS_REPORT.md`](reports/VALUATION_INSIGHTS_REPORT.md) — Valuation analysis
+- [`reports/INDUSTRY_INTELLIGENCE_REPORT.md`](reports/INDUSTRY_INTELLIGENCE_REPORT.md) — Industry deep dive
+- [`reports/PHASE4_ML_MODEL_SUMMARY.md`](reports/PHASE4_ML_MODEL_SUMMARY.md) — ML model details
+- [`PROJECT_SUMMARY.md`](PROJECT_SUMMARY.md) — Complete project summary (all 9 phases)
+- [`notebooks/`](notebooks/) — Jupyter analysis notebooks
 
 ---
 
-### 4. 🏭 Industry Deep Dive
-**Sector-Specific Intelligence**
+## 👤 Author
 
-- **Coverage**: 18 industry categories
-- **Metrics**: Success rates, avg investments, trends
-- **Benchmarks**: Industry-specific performance indicators
-
-**Use Case**: Get industry-specific insights and benchmarks.
-
----
-
-### 5. 📋 Deal Structure Decoder
-**Analysis of Complex Deal Terms**
-
-- **Components**: Equity, debt, royalty, special terms
-- **Calculator**: Effective cost calculator
-- **Patterns**: Common deal structures
-
-**Use Case**: Understand and calculate true cost of different deal structures.
-
----
-
-### 6. 🗺️ Geographic Success Map
-**Location-Based Investment Patterns**
-
-- **Coverage**: 29 states, 100+ cities
-- **Analysis**: Regional trends, startup hubs
-- **Insights**: Location-based success factors
-
-**Use Case**: Understand how geography influences startup success.
-
----
-
-## 🛠️ Technical Stack
-
-### Data Science & ML
-- **pandas** - Data manipulation
-- **numpy** - Numerical computing
-- **scikit-learn** - Machine learning
-- **XGBoost** - Gradient boosting
-- **statsmodels** - Statistical analysis
-
-### Visualization
-- **matplotlib** - Static plots
-- **seaborn** - Statistical visualization
-- **plotly** - Interactive charts
-- **networkx** - Network graphs
-
-### Dashboard
-- **Streamlit** - Web application framework
-- **streamlit-option-menu** - Navigation components
-
-### Model Interpretation
-- **SHAP** - Model explainability
-
----
-
-## 📈 Key Findings
-
-### Investment Patterns
-- **Top Investors**: Aman Gupta (₹5,854L, 144 deals), Namita Thapar (₹4,494L, 121 deals)
-- **Most Active Partnership**: Aman-Namita (45 collaborations)
-- **Highest Success Industry**: Beauty & Fashion (72.3%)
-
-### Valuation Insights
-- **Average Valuation**: ₹1,058 Lakhs
-- **Typical Revenue Multiple**: 4.5x - 6.0x
-- **Equity Range**: 5% - 15% most common
-
-### Geographic Trends
-- **Top States**: Maharashtra (163), Delhi (94), Karnataka (70)
-- **Highest Success Rate**: Telangana (74.1%)
-- **Emerging Hubs**: Bangalore, Hyderabad, Pune
-
----
-
-## 📚 Documentation
-
-Detailed documentation for each module is available in the `notebooks/` directory:
-
-- **EDA Report**: Comprehensive exploratory analysis
-- **Model Documentation**: ML model architecture and performance
-- **API Reference**: Function and class documentation
-- **User Guide**: Step-by-step usage instructions
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+**Apoorv Thite**
+- LinkedIn: [linkedin.com/in/apoorvthite](https://linkedin.com/in/apoorvthite)
+- GitHub: [github.com/apoorvthite](https://github.com/apoorvthite)
+- Email: apoorv@example.com
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 👥 Authors
+## � Future Enhancements
 
-**Data Science Team**
-- Project Lead: [Your Name]
-- Contributors: [Team Members]
-
----
-
-## 🙏 Acknowledgments
-
-- Shark Tank India for the inspiration
-- The sharks for their investment insights
-- All the entrepreneurs who pitched on the show
-- Open-source community for amazing tools
+- [ ] Real-time data integration via web scraping
+- [ ] NLP sentiment analysis of pitch transcripts
+- [ ] Deep learning (LSTM) for time-series investment forecasting
+- [ ] REST API deployment (FastAPI)
+- [ ] Mobile-responsive dashboard
+- [ ] Automated weekly insights report generation
 
 ---
 
-## 📞 Contact
-
-For questions, suggestions, or collaborations:
-
-- **Email**: your.email@example.com
-- **LinkedIn**: [Your LinkedIn]
-- **GitHub**: [Your GitHub]
-
----
-
-## 🔮 Future Enhancements
-
-- [ ] Real-time data integration
-- [ ] Sentiment analysis of pitch transcripts
-- [ ] Deep learning models for success prediction
-- [ ] Mobile app version
-- [ ] API for external integrations
-- [ ] Advanced time-series forecasting
-- [ ] Recommendation system for founders
-
----
-
-**Built with ❤️ using Python, Streamlit, XGBoost, NetworkX, and Plotly**
-
+*Built with Python · Streamlit · XGBoost · NetworkX · Plotly*  
 *Last Updated: February 2026*
